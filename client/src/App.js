@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios'
+import Header from './components/Header'
+import Button from "./components/Button"
 
 class App extends Component {
   state = {
@@ -14,11 +16,22 @@ class App extends Component {
     });
   }
 
-  render() {
-    return (
-      <div className="App">
-        <h1>This message is hardcoded into the frontend</h1>
-        <h1>{this.state.response.body}</h1>
+  render() { //this is where our front end is
+    var x = false; //if x= true, it will write "yes" if not "Very yes"
+    var variableText;
+    const onClick =() => {
+      x=!x
+      console.log(x)
+      variableText = x ? "Yes" : "Very Yes"
+    }
+    
+    return ( //can only return one (1) parent element (i.e. div)
+      <div className="App"> 
+        <Header title="This is my header" />
+        <h1>This is my Title </h1>
+        <h3>{this.state.response.body}</h3>
+        <p>Variable Content: <span className="variable">{variableText}</span></p>
+        <Button onClick={onClick}/>
       </div>
     );
   }
