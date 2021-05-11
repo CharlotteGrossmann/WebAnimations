@@ -23,7 +23,7 @@ class App extends Component {
 		var variableText;
 		const onClick = () => {
 			x = !x;
-			console.log(x);
+			alert(x);
 		};
 		variableText = x ? 'Yes' : 'Very Yes';
 		return (
@@ -31,7 +31,7 @@ class App extends Component {
 			<div className='App'>
 				<Header title='This is my header' />
 				<h1>This is my Title </h1>
-				<h3>{this.state.response.body}</h3>
+				<h3>{this.state.response.body}</h3> {/*variable vom backend*/}
 				<p>
 					Variable Content: <span className='variable'>{variableText}</span>
 				</p>
