@@ -1,1 +1,5 @@
 # WebAnimations
+
+## Setup
+
+npm install
