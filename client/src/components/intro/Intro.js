@@ -1,5 +1,5 @@
-//short intro text
-import '../../styles/Intro.css';
+//short intro t//ext
+//import '../../styles/Intro.css';
 
 function Intro() {
 	return (

@@ -1,0 +1,9 @@
+.time-line {
+	background-image: url('./assets/Background.svg');
+	background-repeat: no-repeat;
+	background-size: 100%;
+	width: 100%;
+	height: 3072px;
+	background-position: top;
+	background-size: 400px;
+}
