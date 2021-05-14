@@ -18,3 +18,7 @@ npm run dev
 ```
 npm run client:build
 ```
+
+#### View Website
+
+https://web-animations.herokuapp.com/
