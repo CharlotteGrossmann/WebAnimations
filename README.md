@@ -2,7 +2,7 @@
 
 ## Setup
 
-### Clone Repository
+### Clone repository
 
 Clone repository to your computer
 
