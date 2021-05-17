@@ -7,7 +7,7 @@
 Clone repository to your computer
 
 
-###Install npm packages
+### Install npm packages
 
 ```
 npm install
