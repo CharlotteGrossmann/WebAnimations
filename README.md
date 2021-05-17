@@ -2,9 +2,15 @@
 
 ## Setup
 
+### Clone Repository
+
+Clone repository to your computer
+
+
+###Install npm packages
+
 ```
 npm install
-
 ```
 
 ### For live view during coding
