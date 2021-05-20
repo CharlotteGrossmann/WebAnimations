@@ -1,0 +1,41 @@
+#css {
+	fill: #7000ff;
+}
+#js {
+	fill: #00a3ff;
+}
+#web-gl {
+	fill: #ff00b8;
+}
+#flash {
+	fill: #bd00ff;
+}
+#canvas {
+	fill: #0057ff;
+}
+
+circle {
+	fill: white;
+	stroke: #000;
+	stroke-miterlimit: 10;
+	stroke-width: 0.5202428102493286px;
+}
+line {
+	fill: none;
+	stroke: #000;
+	stroke-miterlimit: 10;
+	stroke-width: 0.5202428102493286px;
+}
+
+.background {
+	position: flex;
+}
+
+#tooltip {
+	position: absolute;
+	background: violet;
+	border: solid black 1px;
+	border-radius: 15%;
+	padding: 5px;
+	z-index: 100;
+}

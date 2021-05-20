@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import axios from 'axios';
 import Landing from './components/landing/Landing';
-import TextBox from './components/textBox/TextBox';
-import Animation from './components/animation/Animation';
+import Timeline from './components/timeline/Timeline';
 class App extends Component {
 	state = {
 		response: {},
@@ -22,19 +21,7 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<Landing />
-				<div className='time-line'>
-					<TextBox title='Fun Fact' textId='gifFactFact' float='left' />
-
-					<TextBox title='Hard Fact' textId='gifHardFact' float='right' />
-					<TextBox title='Fun Fact' textId='gifFactFact' float='left' />
-					<Animation animationId='gif' float='left' />
-
-					<TextBox title='Hard Fact' textId='gifHardFact' float='right' />
-					<TextBox title='Fun Fact' textId='gifFactFact' float='left' />
-					<TextBox title='Hard Fact' textId='gifHardFact' float='right' />
-					<TextBox title='Fun Fact' textId='gifFactFact' float='left' />
-					<TextBox title='Hard Fact' textId='gifHardFact' float='right' />
-				</div>
+				<Timeline />
 			</div>
 		);
 	}
