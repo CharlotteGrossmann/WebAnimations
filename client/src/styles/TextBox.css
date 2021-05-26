@@ -1,22 +1,20 @@
-.text-box {
+/* .text-box {
 	width: 1300px;
 	height: 290px;
 	display: block;
 	margin: auto;
 }
-
+ */
 .left,
 .right {
-	width: 440px;
-	height: 250px;
-	border-width: 1px;
+	width: 30vw;
+	min-width: 300px;
+	height: auto;
+	border-width: 5px;
 	border-style: solid;
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 30px;
 	padding: 20px;
 }
-
+/* 
 .left {
 	float: left;
 }
@@ -24,8 +22,36 @@
 .right {
 	float: right;
 }
-
+ */
 .title {
 	text-transform: uppercase;
 	font-size: larger;
+}
+
+.red {
+	border-color: red;
+}
+.red .title {
+	color: red;
+}
+
+.blue {
+	border-color: blue;
+}
+.blue .title {
+	color: blue;
+}
+
+.cyan {
+	border-color: cyan;
+}
+.cyan .title {
+	color: cyan;
+}
+
+.yellow {
+	border-color: yellow;
+}
+.yellow .title {
+	color: yellow;
 }

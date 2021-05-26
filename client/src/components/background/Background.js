@@ -160,10 +160,6 @@ function Background() {
 								width='1440.82'
 								height='8845.44'
 							/>
-							<g id='start'>
-								<line x1='721.41' y1='15.92' x2='722.41' y2='410.03' />
-								<ellipse cx='721.41' cy='8.96' rx='8.99' ry='8.96' />
-							</g>
 							<rect
 								id='lottie'
 								x='720.41'
@@ -172,34 +168,50 @@ function Background() {
 								height='1088.76'
 							/>
 							<path
+								onMouseOver={() => Show('WebGL')}
+								onMouseLeave={() => Hide()}
 								id='web-gl'
 								d='M1086.11,8199.54H981.2v1019.1h55v1194.25h104.91V9218.64h-55Z'
 							/>
 							<path
+								onMouseEnter={() => Show('HTML5 Video')}
+								onMouseLeave={() => Hide()}
 								id='video'
 								d='M511.58,7080.93H617.49V8100h-54V9218.64h-51v1194.25H407.67V9218.64h50.95V8094.05h53Z'
 							/>
 							<path
+								onMouseEnter={() => Show('Canvas')}
+								onMouseLeave={() => Hide()}
 								id='canvas'
 								d='M930.24,5962.31h104.91V8199.54h-54v1019.1h55v1194.25H931.24V9218.64h-55V8094.05h54Z'
 							/>
 							<path
+								onMouseEnter={() => Show('SVG')}
+								onMouseLeave={() => Hide()}
 								id='svg'
 								d='M669.45,4840.71H774.36V5856.82h1v105.49h-53V6975.43H826.32v105.5h-1V8199.54h-54V9324.13h-51v1088.76H615.5V9218.64h51V8094.05h54V7080.93h-51v-105.5h-54V5962.31h-1V5856.82h55Z'
 							/>
 							<path
+								onMouseEnter={() => Show('CSS')}
+								onMouseLeave={() => Hide()}
 								id='css'
 								d='M722.41,3722.09H617.49V4735.21h-53V5856.82h-53V7080.93H617.49V8094.05h-54V9218.64h-51v1194.25H617.49V9324.13h49V9218.64h2V8199.54h-2V8100h56V7080.93h-2v-105.5H616.49V5859.8h53V4840.71h54v-105.5h-1Z'
 							/>
 							<path
+								onMouseEnter={() => Show('Flash')}
+								onMouseLeave={() => Hide()}
 								id='flash'
 								d='M774.36,2597.5H669.45V3722.09h53V4840.71h52V5859.8h1v102.51h-53v1019.1H827.32V5962.31h52V4735.21h-52V3722.09h-1V3616.6h-52Z'
 							/>
 							<path
+								onMouseEnter={() => Show('JavaScript')}
+								onMouseLeave={() => Hide()}
 								id='js'
 								d='M721.41,1503.76H616.49V2493h-52V3616.6h-52V4735.21h-52v105.5h-1V5856.82H406.67V8094.05h-53V9218.64h-51v1194.25H407.67V9218.64h50.95V8100h53V5859.8h53V4741.19h53V3722.09h52V2597.5h52Z'
 							/>
 							<path
+								onMouseOver={() => Show('Gif')}
+								onMouseLeave={() => Hide()}
 								id='gif'
 								d='M774.36,410H669.45V1429.12h1v74.64h51V2597.5h52V3616.6h53V4840.71h52v1121.6h-53V8094.05h-54V9324.13h55v1088.76H931.24V9218.64h-55V8100h54V5962.31h53V4735.21h-52V3616.6h-53V2493h-52V1503.76h1V1399.27h-53Z'
 							/>
@@ -339,6 +351,10 @@ function Background() {
 								d='M725.5,9910.09a3,3,0,1,1-3-2.83A2.92,2.92,0,0,1,725.5,9910.09Z'
 							/>
 							<line x1='722.5' y1='10413.89' x2='722.5' y2='9909.89' />
+							<g id='start'>
+								<line x1='721.41' y1='15.92' x2='722.41' y2='410.03' />
+								<ellipse cx='721.41' cy='8.96' rx='8.99' ry='8.96' />
+							</g>
 						</g>
 					</g>
 				</g>

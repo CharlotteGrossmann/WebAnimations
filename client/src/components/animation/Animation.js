@@ -1,6 +1,6 @@
 import '../../styles/Animation.css';
 
-function Animation({ animationId, float }) {
+function Animation({ animationId, float, color }) {
 	var dict = {
 		gif: './assets/gif.gif',
 
@@ -10,7 +10,7 @@ function Animation({ animationId, float }) {
 
 	return (
 		<div className='animation-box'>
-			<div className={float}>{content}</div>
+			<div className={float + ' ' + color}>{content}</div>
 		</div>
 	);
 }
