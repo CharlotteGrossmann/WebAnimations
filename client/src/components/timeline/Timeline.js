@@ -29,7 +29,7 @@ function Timeline() {
 					float='left'
 					color='red'
 				/>
-				<Animation animationId='gif' float='left' color='red' />
+				<Animation animationId='js' float='left' color='red' />
 
 				<TextBox
 					title='Hard Fact'
