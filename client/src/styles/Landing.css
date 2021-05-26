@@ -1,14 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
 div {
 	align-content: center;
-	font-family: 'Nunito', Arial, Roboto;
 	margin-bottom: 50px;
 }
 
+h1 {
+	text-align: center;
+}
 .title {
 	margin-top: 50px;
-	font-family: Nunito;
+	font-family: 'Arvo', serif;
 	text-align: center;
 	text-transform: uppercase;
 }
@@ -25,6 +27,7 @@ div {
 	width: 300px;
 	text-align: center;
 	margin: auto;
+	font-family: 'Ubuntu Mono', monospace;
 	margin-top: 30px;
 }
 

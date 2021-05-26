@@ -1,15 +1,19 @@
 //Landing section
-import Title from '../title/Title';
 import Logo from '../logo/Logo';
-import Intro from '../intro/Intro';
 import '../../styles/Landing.css';
 
 function Landing() {
 	return (
 		<div>
-			<Title class='title' />
+			<h1 class='title'>
+				<span class='title-small'>The History of </span> <br />
+				<span class='title-big'>Web Animation</span>
+			</h1>
 			<Logo class='logo' />
-			<Intro class='intro' />
+			<p class='intro'>
+				An interactive journey about the techniques used in Animation across the
+				web. Brought to you by Josefa, Lotte & Hannah
+			</p>
 		</div>
 	);
 }
