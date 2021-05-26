@@ -1,32 +1,62 @@
 #css {
-	fill: #7000ff;
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_15);
 }
 #js {
-	fill: #00a3ff;
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_13);
 }
 #web-gl {
-	fill: #ff00b8;
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_19);
 }
 #flash {
-	fill: #bd00ff;
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_14);
 }
 #canvas {
-	fill: #0057ff;
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_17);
+}
+#background {
+	fill: linear-gradient(#000000 24.37%, #000033 64.37%, #282828 90.12%);
+}
+#lottie {
+	fill: url(#Unbenannter_Verlauf_2);
+}
+#video {
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_18);
+}
+#svg {
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_16);
+}
+#gif {
+	fill-rule: evenodd;
+	fill: url(#Unbenannter_Verlauf_12);
 }
 
-circle {
-	fill: white;
-	stroke: #000;
-	stroke-miterlimit: 10;
-	stroke-width: 0.5202428102493286px;
+#start {
+	fill: #fff;
+	stroke: white;
 }
-line {
+ellipse.time-line-line {
+	fill: none;
+	stroke: #fff;
+	stroke-miterlimit: 3.1317977905273438;
+	stroke-width: 1.9943877177920715px;
+}
+
+#number {
+	fill: black;
+}
+
+.time-line-line {
 	fill: none;
 	stroke: #000;
-	stroke-miterlimit: 10;
-	stroke-width: 0.5202428102493286px;
+	stroke-width: 2px;
 }
-
 .background {
 	position: flex;
 }
