@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+/* .text-box {
+	width: 1300px;
+	height: 290px;
+	display: block;
+	margin: auto;
+}
+ */
+.box {
+	width: 300px;
+	height: auto;
+	border-width: 5px;
+	border-style: solid;
+	padding: 20px;
+	background-color: black;
+}
+/* 
+.left {
+	float: left;
+}
+
+.right {
+	float: right;
+}
+ */
+.title {
+	text-transform: uppercase;
+	font-size: larger;
+}
+
+.red {
+	border-color: red;
+}
+.red .title {
+	color: red;
+}
+
+.blue {
+	border-color: blue;
+}
+.blue .title {
+	color: blue;
+}
+
+.cyan {
+	border-color: cyan;
+}
+.cyan .title {
+	color: cyan;
+}
+
+.yellow {
+	border-color: yellow;
+}
+.yellow .title {
+	color: yellow;
+}
+
+.orange {
+	border-color: orange;
+}
+.orange .title {
+	color: orange;
+}
+
+.turquoise {
+	border-color: turquoise;
+}
+.turquoise .title {
+	color: turquoise;
+}
+
+.purple {
+	border-color: purple;
+}
+.purple .title {
+	color: purple;
+}
+
+.lime {
+	border-color: lime;
+}
+.lime .title {
+	color: lime;
+}
+
+.navy {
+	border-color: navy;
+}
+.navy .title {
+	color: navy;
+}
+
+.grey {
+	border-color: grey;
+}
+.grey .title {
+	color: grey;
+}
+
+table,
+content {
+	font-family: Ubuntu Mono;
+}
+.category {
+	margin-right: 30px;
+	display: inline-block;
+}

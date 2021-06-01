@@ -4,10 +4,7 @@ import axios from 'axios';
 import Landing from './components/landing/Landing';
 
 import Timeline from './components/timeline/Timeline';
-import TextBox from './components/textBox/TextBox';
-import Animation from './components/animation/Animation';
 
-import Background from './components/background/Background';
 class App extends Component {
 	state = {
 		response: {},

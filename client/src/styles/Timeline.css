@@ -3,7 +3,15 @@
 	margin-top: 0;
 }
 .time-line-text {
-	padding-top: 600px;
+	padding-top: 800px;
 	margin-left: 30px;
 	max-width: 30%;
+}
+
+.left-column {
+	float: left;
+}
+
+.right-column {
+	float: right;
 }
