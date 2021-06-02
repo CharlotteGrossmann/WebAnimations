@@ -1,31 +1,29 @@
 {
   "files": {
-    "main.css": "/static/css/main.673490cb.chunk.css",
-    "main.js": "/static/js/main.a823a6f7.chunk.js",
-    "main.js.map": "/static/js/main.a823a6f7.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.ab9360a6.js",
-    "runtime-main.js.map": "/static/js/runtime-main.ab9360a6.js.map",
+    "main.css": "/static/css/main.a086dc54.chunk.css",
+    "main.js": "/static/js/main.67c16a17.chunk.js",
+    "main.js.map": "/static/js/main.67c16a17.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4314c5a5.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4314c5a5.js.map",
     "static/js/2.fe1aaa0d.chunk.js": "/static/js/2.fe1aaa0d.chunk.js",
     "static/js/2.fe1aaa0d.chunk.js.map": "/static/js/2.fe1aaa0d.chunk.js.map",
-    "static/js/3.b7d5901c.chunk.js": "/static/js/3.b7d5901c.chunk.js",
-    "static/js/3.b7d5901c.chunk.js.map": "/static/js/3.b7d5901c.chunk.js.map",
+    "static/js/3.a2715025.chunk.js": "/static/js/3.a2715025.chunk.js",
+    "static/js/3.a2715025.chunk.js.map": "/static/js/3.a2715025.chunk.js.map",
     "index.html": "/index.html",
-    "static/css/main.673490cb.chunk.css.map": "/static/css/main.673490cb.chunk.css.map",
+    "static/css/main.a086dc54.chunk.css.map": "/static/css/main.a086dc54.chunk.css.map",
     "static/js/2.fe1aaa0d.chunk.js.LICENSE.txt": "/static/js/2.fe1aaa0d.chunk.js.LICENSE.txt",
-    "static/media/CSS.bff537c7.gif": "/static/media/CSS.bff537c7.gif",
     "static/media/Canvas.90ed0f83.gif": "/static/media/Canvas.90ed0f83.gif",
     "static/media/Flash.c20228fd.gif": "/static/media/Flash.c20228fd.gif",
     "static/media/GIF.c20228fd.gif": "/static/media/GIF.c20228fd.gif",
-    "static/media/JS.90ed0f83.gif": "/static/media/JS.90ed0f83.gif",
     "static/media/Lottie.90ed0f83.gif": "/static/media/Lottie.90ed0f83.gif",
     "static/media/SVG.bff537c7.gif": "/static/media/SVG.bff537c7.gif",
     "static/media/Video.bff537c7.gif": "/static/media/Video.bff537c7.gif",
-    "static/media/WebGl.c20228fd.gif": "/static/media/WebGl.c20228fd.gif"
+    "static/media/WebGL.c20228fd.gif": "/static/media/WebGL.c20228fd.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.ab9360a6.js",
+    "static/js/runtime-main.4314c5a5.js",
     "static/js/2.fe1aaa0d.chunk.js",
-    "static/css/main.673490cb.chunk.css",
-    "static/js/main.a823a6f7.chunk.js"
+    "static/css/main.a086dc54.chunk.css",
+    "static/js/main.67c16a17.chunk.js"
   ]
 }
