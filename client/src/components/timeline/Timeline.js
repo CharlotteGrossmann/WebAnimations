@@ -13,7 +13,7 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
-						title='JavaScrpt'
+						title='JavaScript'
 						textId='jsText'
 						float='left'
 						color='red'

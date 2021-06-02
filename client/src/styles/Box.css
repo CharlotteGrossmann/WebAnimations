@@ -13,16 +13,8 @@
 	border-style: solid;
 	padding: 20px;
 	background-color: black;
+	overflow: hidden;
 }
-/* 
-.left {
-	float: left;
-}
-
-.right {
-	float: right;
-}
- */
 .title {
 	text-transform: uppercase;
 	font-size: larger;
@@ -105,4 +97,9 @@ content {
 .category {
 	margin-right: 30px;
 	display: inline-block;
+}
+
+.animation-box {
+	height: 300px;
+	overflow: hidden;
 }

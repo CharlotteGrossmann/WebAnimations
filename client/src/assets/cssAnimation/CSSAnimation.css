@@ -1,0 +1,60 @@
+.CSSAnimation {
+	width: 125px;
+	color: yellow;
+	animation-name: move;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+	position: flex;
+	transform-origin: center;
+	transform: translate(80%, 150%);
+}
+.css-animation-title {
+	font-size: 4em;
+	display: flex;
+	text-align: center;
+	margin: auto;
+}
+.css-animation-line {
+	font-size: 4em;
+	margin-top: -80px;
+	overflow: hidden;
+	display: flex;
+	font-weight: 600;
+
+	animation-name: line;
+	animation-duration: 4s;
+	animation-iteration-count: infinite;
+}
+
+@keyframes line {
+	0% {
+		width: 0px;
+	}
+	10% {
+		width: 0px;
+	}
+	30% {
+		width: 125px;
+	}
+	100% {
+		width: 125px;
+	}
+}
+
+@keyframes move {
+	0% {
+		opacity: 0;
+	}
+	20% {
+		opacity: 1;
+	}
+	30% {
+		transform: rotate(0deg) translate(80%, 150%);
+	}
+	55% {
+		transform: rotate(-25deg) translate(50%, 200%);
+	}
+	100% {
+		transform: rotate(-25deg) translate(250%, 350%);
+	}
+}
