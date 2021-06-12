@@ -6,7 +6,7 @@
 	top: 110px;
 }
 
-#svg-letter-s {
+.animate-letter-s {
 	stroke-dasharray: 290;
 	stroke-dashoffset: 290;
 	animation: dash1 5s linear infinite;
@@ -16,7 +16,7 @@
 		stroke-dashoffset: 0;
 	}
 }
-#svg-letter-v {
+.animate-letter-v {
 	stroke-dasharray: 15;
 	stroke-dashoffset: 350;
 	animation: dash2 10s linear alternate infinite;
