@@ -5,10 +5,10 @@ import Background from '../background/Background';
 import TableTextBox from './../tableTextBox/TableTextBox';
 function Timeline() {
 	return (
-		<div className='timeline'>
+		<div className='time-line'>
 			<Background />
-			<div className='left-column'>
-				<section className='time-line-text '>
+			<div className='time-line-left-column'>
+				<section className='time-line-time-line-text '>
 					<Animation animationId='gif' float='left' color='blue' />
 				</section>
 				<section className='time-line-text'>
@@ -97,7 +97,7 @@ function Timeline() {
 
 			{/* ---------------------------------------------------------- */}
 
-			<div className='right-column'>
+			<div className='time-line-right-column'>
 				<section className='time-line-text'>
 					<SimpleTextBox
 						title='GIF'

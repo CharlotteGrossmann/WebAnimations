@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-/* .text-box {
-	width: 1300px;
-	height: 290px;
-	display: block;
-	margin: auto;
-}
- */
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
+
 .box {
 	width: 300px;
 	height: auto;
@@ -14,92 +9,98 @@
 	padding: 20px;
 	background-color: black;
 	overflow: hidden;
+	margin-top: 50px;
 }
-.title {
+.box-title {
 	text-transform: uppercase;
 	font-size: larger;
 }
 
-.red {
+.box-red {
 	border-color: red;
 }
-.red .title {
+.box-red .box-title {
 	color: red;
 }
 
-.blue {
+.box-blue {
 	border-color: blue;
 }
-.blue .title {
+.box-blue .box-title {
 	color: blue;
 }
 
-.cyan {
+.box-cyan {
 	border-color: cyan;
 }
-.cyan .title {
+.box-cyan .box-title {
 	color: cyan;
 }
 
-.yellow {
+.box-yellow {
 	border-color: yellow;
 }
-.yellow .title {
+.box-yellow .box-title {
 	color: yellow;
 }
 
-.orange {
+.box-orange {
 	border-color: orange;
 }
-.orange .title {
+.box-orange .box-title {
 	color: orange;
 }
 
-.turquoise {
+.box-turquoise {
 	border-color: turquoise;
 }
-.turquoise .title {
+.box-turquoise .box-title {
 	color: turquoise;
 }
 
-.purple {
+.box-purple {
 	border-color: purple;
 }
-.purple .title {
+.box-purple .box-title {
 	color: purple;
 }
 
-.lime {
+.box-lime {
 	border-color: lime;
 }
-.lime .title {
+.box-lime .box-title {
 	color: lime;
 }
 
-.navy {
+.box-navy {
 	border-color: navy;
 }
-.navy .title {
+.box-navy .box-title {
 	color: navy;
 }
 
-.grey {
+.box-grey {
 	border-color: grey;
 }
-.grey .title {
+.box-grey .box-title {
 	color: grey;
 }
 
-table,
-content {
+.box-title {
+	font-family: Arvo;
+}
+
+.box-table,
+.box-content {
 	font-family: Ubuntu Mono;
 }
-.category {
+.box-category {
 	margin-right: 30px;
 	display: inline-block;
 }
 
 .animation-box {
 	height: 300px;
+	width: 300px;
 	overflow: hidden;
 }

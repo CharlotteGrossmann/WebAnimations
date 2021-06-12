@@ -1,24 +1,24 @@
 import '../../styles/Box.css';
-import gifAnim from '../../assets/GIF.gif';
+//import gifAnim from '../../assets/GIF.gif';
 import JSAnimation from '../../assets/jsAnimation/JSAnimation';
-import flashAnim from '../../assets/Flash.gif';
+//import flashAnim from '../../assets/Flash.gif';
 import CSSAnimation from '../../assets/cssAnimation/CSSAnimation';
-import svgAnim from '../../assets/SVG.gif';
-import canvasAnim from '../../assets/Canvas.gif';
-import videoAnim from '../../assets/Video.gif';
-import webglAnim from '../../assets/WebGL.gif';
-import lottieAnim from '../../assets/Lottie.gif';
+import SVGAnimation from '../../assets/svgAnimation/SVGAnimation';
+//import canvasAnim from '../../assets/Canvas.gif';
+//import videoAnim from '../../assets/Video.gif';
+import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
+import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
 function Animation({ animationId, color }) {
 	var dict = {
-		gif: gifAnim,
+		gif: 'asd',
 		js: <JSAnimation />,
-		flash: flashAnim,
+		flash: 'asd',
 		css: <CSSAnimation />,
-		svg: svgAnim,
-		canvas: canvasAnim,
-		video: videoAnim,
-		webgl: webglAnim,
-		lottie: lottieAnim,
+		svg: <SVGAnimation />,
+		canvas: 'asd',
+		video: 'asd',
+		webgl: <WebGLAnimation />,
+		lottie: <LottieAnimation />,
 
 		//insert all aimation paths here
 	};
@@ -26,7 +26,7 @@ function Animation({ animationId, color }) {
 
 	return (
 		<div className=''>
-			<div className={'box ' + color + ' animation-box'}>
+			<div className={'box ' + 'box-' + color + ' animation-box'}>
 				{content}
 				{/* <img src={content} width='100%'></img> */}
 			</div>

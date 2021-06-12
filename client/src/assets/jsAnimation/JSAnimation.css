@@ -1,14 +1,10 @@
 .JSAnimation {
 	width: 125px;
-	color: red; /* 
-	animation-name: move;
-	animation-duration: 4s;
-	animation-iteration-count: infinite; */
-	position: absolute;
-	left: auto;
-	top: auto;
+	height: 125px;
+	position: flex;
+
 	transform-origin: center;
-	transform: translate(80%, 150%);
+	transform: translate(100%, 100%);
 }
 .js-animation-title {
 	font-size: 4em;
@@ -22,42 +18,37 @@
 	overflow: hidden;
 	display: flex;
 	font-weight: 600;
-	/* 
-	animation-name: line;
-	animation-duration: 4s;
-	animation-iteration-count: infinite; */
-	width: 60px;
+	width: 0px;
+}
+.js-animation-instruction {
+	width: 100px;
 }
 
-@keyframes line {
+.move-line {
+	animation-name: js-line;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+.default-position {
+	animation-name: js-default-position;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
+@keyframes js-line {
 	0% {
 		width: 0px;
-	}
-	10% {
-		width: 0px;
-	}
-	30% {
-		width: 60px;
 	}
 	100% {
 		width: 60px;
 	}
 }
 
-@keyframes move {
+@keyframes js-default-position {
 	0% {
-		opacity: 0;
-	}
-	20% {
-		opacity: 1;
-	}
-	30% {
-		transform: rotate(0deg) translate(80%, 150%);
-	}
-	55% {
-		transform: rotate(-25deg) translate(50%, 200%);
 	}
 	100% {
-		transform: rotate(-25deg) translate(250%, 350%);
+		transform: rotate(0deg) translate(100%, 100%);
 	}
 }

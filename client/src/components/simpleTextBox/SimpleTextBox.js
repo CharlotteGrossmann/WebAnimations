@@ -44,9 +44,9 @@ function TextBox({ title, textId, color }) {
 	var content = dict[textId];
 	return (
 		<div className='text-box'>
-			<div className={'box ' + color}>
-				<span className='title'>{title}</span>
-				<p className='content'>{content}</p>
+			<div className={'box ' + 'box-' + color}>
+				<span className='box-title'>{title}</span>
+				<p className='box-content'>{content}</p>
 			</div>
 		</div>
 	);

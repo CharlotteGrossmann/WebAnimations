@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Arvo:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
-div {
+.landing-div {
 	align-content: center;
 	margin-bottom: 50px;
 }
 
-h1 {
+/* .landing-h1 {
 	text-align: center;
-}
-.title {
+} */
+.landing-title {
+	text-align: center;
 	margin-top: 50px;
 	font-family: 'Arvo', serif;
 	text-align: center;
 	text-transform: uppercase;
 }
 
-.title-small {
+.landing-title-small {
 	font-size: 1em;
 }
 
-.title-big {
+.landing-title-big {
 	font-size: 1.7em;
 }
 
-.intro {
+.landing-intro {
 	width: 300px;
 	text-align: center;
 	margin: auto;
@@ -31,7 +32,7 @@ h1 {
 	margin-top: 30px;
 }
 
-.logo {
+.landing-logo {
 	width: 200px;
 	height: 200px;
 	border-style: solid;
