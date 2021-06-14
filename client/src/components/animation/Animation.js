@@ -1,18 +1,18 @@
 import '../../styles/Box.css';
-//import gifAnim from '../../assets/GIF.gif';
+import gifAnimation from '../../assets/gif.gif';
 import JSAnimation from '../../assets/jsAnimation/JSAnimation';
-//import flashAnim from '../../assets/Flash.gif';
+import flashAnimation from '../../assets/flash.gif';
 import CSSAnimation from '../../assets/cssAnimation/CSSAnimation';
 import SVGAnimation from '../../assets/svgAnimation/SVGAnimation';
-//import canvasAnim from '../../assets/Canvas.gif';
+//import canvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
 //import videoAnim from '../../assets/Video.gif';
 import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
 function Animation({ animationId, color }) {
 	var dict = {
-		gif: 'asd',
+		gif: <img src={gifAnimation} width='100%'></img>,
 		js: <JSAnimation />,
-		flash: 'asd',
+		flash: <img src={flashAnimation} width='100%'></img>,
 		css: <CSSAnimation />,
 		svg: <SVGAnimation />,
 		canvas: 'asd',

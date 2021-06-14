@@ -42,7 +42,7 @@ function LottieAnimation() {
 			height: '300px',
 			loop: true,
 			autoplay: false,
-			animationData: require('./lottie_ae.json'),
+			animationData: require('./lottie.json'),
 		});
 
 		return () => {
