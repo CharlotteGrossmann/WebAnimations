@@ -1,15 +1,5 @@
 import Unity, { UnityContext } from 'react-unity-webgl';
 
-/* function WebGLAnimation() {
-	
-return (
-		<div class='webgl-content'>
-			<div id='unityContainer' style='width: 300px; height: 300px'></div>
-		</div>
-	);
-}
- */
-
 const unityContext = new UnityContext({
 	loaderUrl: './build/Build.loader.js',
 	dataUrl: './build/Build.data',
@@ -18,8 +8,45 @@ const unityContext = new UnityContext({
 });
 
 function WebGLAnimation() {
+	var debugWebGLAnimation = false;
+
+	var myElement = document.getElementById('WebGlAnimation-box');
+	document.addEventListener('scroll', () => {
+		if (myElement) {
+			var bounding = myElement.getBoundingClientRect();
+
+			if (debugWebGLAnimation) {
+				console.log(bounding);
+			}
+
+			//if webgl is in viewport -> start animation
+			if (
+				bounding.top >= 0 &&
+				bounding.left >= 0 &&
+				bounding.right <=
+					(window.innerWidth || document.documentElement.clientWidth) &&
+				bounding.bottom <=
+					(window.innerHeight || document.documentElement.clientHeight)
+			) {
+				/* 				document.getElementById('WebGLAnimation-animation');
+				 */
+				unityContext.send('DoorAngle', 'TogglePlay', 1);
+				if (debugWebGLAnimation) {
+					console.log('Element is in the viewport!');
+				}
+			} else {
+				/* document.getElementById(
+					'WebGLAnimation-animation'
+				) */
+
+				if (debugWebGLAnimation) {
+					console.log('Element is not in the viewport!');
+				}
+			}
+		}
+	});
 	return (
-		<div>
+		<div id='WebGlAnimation-box'>
 			<Unity
 				unityContext={unityContext}
 				style={{

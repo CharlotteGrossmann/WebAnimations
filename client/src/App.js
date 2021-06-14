@@ -22,7 +22,7 @@ class App extends Component {
 
 		return (
 			<div className='App'>
-				{/* <JSAnimation color='turquoise' animationId='svg' />
+				{/* 				<JSAnimation color='turquoise' animationId='lottie' />
 				 */}
 				<Landing />
 				<Timeline />
