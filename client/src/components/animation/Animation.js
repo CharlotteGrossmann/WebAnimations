@@ -28,7 +28,6 @@ function Animation({ animationId, color }) {
 		<div className=''>
 			<div className={'box ' + 'box-' + color + ' animation-box'}>
 				{content}
-				{/* <img src={content} width='100%'></img> */}
 			</div>
 		</div>
 	);
