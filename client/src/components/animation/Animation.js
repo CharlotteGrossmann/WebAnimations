@@ -10,9 +10,21 @@ import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
 function Animation({ animationId, color }) {
 	var dict = {
-		gif: <img src={gifAnimation} width='100%'></img>,
+		gif: (
+			<img
+				src={gifAnimation}
+				alt='animated sketch with flipbook look'
+				width='100%'
+			></img>
+		),
 		js: <JSAnimation />,
-		flash: <img src={flashAnimation} width='100%'></img>,
+		flash: (
+			<img
+				src={flashAnimation}
+				alt='lightling that results in flash logo'
+				width='100%'
+			></img>
+		),
 		css: <CSSAnimation />,
 		svg: <SVGAnimation />,
 		canvas: 'asd',

@@ -15,9 +15,7 @@ function WebGLAnimation() {
 		if (myElement) {
 			var bounding = myElement.getBoundingClientRect();
 
-			if (debugWebGLAnimation) {
-				console.log(bounding);
-			}
+			console.log(bounding);
 
 			//if webgl is in viewport -> start animation
 			if (
@@ -28,17 +26,13 @@ function WebGLAnimation() {
 				bounding.bottom <=
 					(window.innerHeight || document.documentElement.clientHeight)
 			) {
-				/* 				document.getElementById('WebGLAnimation-animation');
-				 */
-				unityContext.send('DoorAngle', 'TogglePlay', 1);
+				if (unityContext) {
+					unityContext.send('DoorAngle', 'TogglePlay', 1);
+				}
 				if (debugWebGLAnimation) {
 					console.log('Element is in the viewport!');
 				}
 			} else {
-				/* document.getElementById(
-					'WebGLAnimation-animation'
-				) */
-
 				if (debugWebGLAnimation) {
 					console.log('Element is not in the viewport!');
 				}

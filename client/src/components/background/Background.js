@@ -9,12 +9,16 @@ function Background() {
 		mouseY = event.y;
 	});
 	function Show(name) {
-		tooltip.innerText = name;
-		tooltip.style.left = mouseX + 'px';
-		tooltip.style.top = mouseY + 'px';
+		if (tooltip) {
+			tooltip.innerText = name;
+			tooltip.style.left = mouseX + 'px';
+			tooltip.style.top = mouseY + 'px';
+		}
 	}
 	function Hide() {
-		tooltip.innerHTML = '<br>';
+		if (tooltip) {
+			tooltip.innerHTML = '<br>';
+		}
 	}
 	return (
 		<div className='background'>

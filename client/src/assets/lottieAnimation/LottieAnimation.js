@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 
 function LottieAnimation() {
-	var debugLottieAnimation = false;
+	var debugLottieAnimation = true;
 	const container = useRef(null);
 
-	var myElement = document.getElementById('lottieAnimation-box');
+	/* var myElement = document.getElementById('lottieAnimation-box');
 	document.addEventListener('scroll', () => {
 		if (myElement) {
 			var bounding = myElement.getBoundingClientRect();
@@ -33,7 +33,7 @@ function LottieAnimation() {
 				}
 			}
 		}
-	});
+	}); */
 	useEffect(() => {
 		lottie.loadAnimation({
 			container: container.current,
@@ -41,7 +41,7 @@ function LottieAnimation() {
 			width: '300px',
 			height: '300px',
 			loop: true,
-			autoplay: false,
+			autoplay: true,
 			animationData: require('./lottie.json'),
 		});
 
