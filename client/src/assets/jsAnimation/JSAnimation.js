@@ -3,43 +3,54 @@ import './JSAnimation.css';
 function JSAnimation() {
 	var mouseX;
 	var mouseY;
-	var jsAnimationShip;
-	jsAnimationShip = document.getElementById('js-animation-ship');
 
-	if (jsAnimationShip) {
-		var animationBox = jsAnimationShip.parentElement;
+	document
+		.getElementById('js-animation-ship')
+		.parentElement.addEventListener('mouseover', (event) => {
+			document.getElementById('js-animation-ship').style.color = 'red';
+			document.getElementsByClassName(
+				'js-animation-instruction'
+			)[0].style.color = 'grey';
+			document
+				.getElementsByClassName('js-animation-line')[0]
+				.classList.add('move-line');
+		});
 
-		if (animationBox) {
-			animationBox.addEventListener('mouseover', (event) => {
-				jsAnimationShip.style.color = 'red';
-				document.getElementsByClassName(
-					'js-animation-instruction'
-				)[0].style.color = 'grey';
+	document
+		.getElementById('js-animation-ship')
+		.parentElement.addEventListener('mouseleave', (event) => {
+			document.getElementById('js-animation-ship').style.color = 'grey';
+
+			document.getElementsByClassName(
+				'js-animation-instruction'
+			)[0].style.color = 'red';
+			document
+				.getElementById('js-animation-ship')
+				.classList.add('default-position');
+		});
+
+	document
+		.getElementById('js-animation-ship')
+		.parentElement.addEventListener('click', (event) => {
+			document
+				.getElementById('js-animation-ship')
+				.classList.remove('default-position');
+
+			mouseX =
+				event.x -
+				document.getElementById('js-animation-ship').parentElement.offsetLeft -
+				50;
+			mouseY =
+				event.y -
 				document
-					.getElementsByClassName('js-animation-line')[0]
-					.classList.add('move-line');
-			});
+					.getElementById('js-animation-ship')
+					.parentElement.getBoundingClientRect().top -
+				50;
 
-			animationBox.addEventListener('mouseleave', (event) => {
-				jsAnimationShip.style.color = 'grey';
+			document.getElementById('js-animation-ship').style.transform =
+				'translate(' + mouseX + 'px, ' + mouseY + 'px)';
+		});
 
-				document.getElementsByClassName(
-					'js-animation-instruction'
-				)[0].style.color = 'red';
-				jsAnimationShip.classList.add('default-position');
-			});
-
-			animationBox.addEventListener('click', (event) => {
-				jsAnimationShip.classList.remove('default-position');
-
-				mouseX = event.x - animationBox.offsetLeft - 50;
-				mouseY = event.y - animationBox.getBoundingClientRect().top - 50;
-
-				jsAnimationShip.style.transform =
-					'translate(' + mouseX + 'px, ' + mouseY + 'px)';
-			});
-		}
-	}
 	return (
 		<div
 			className='JSAnimation'
