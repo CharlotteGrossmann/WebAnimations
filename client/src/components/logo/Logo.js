@@ -1,7 +1,11 @@
-//logo always in top right corner and on top of the page
+import startingAnimation from '../../assets/start.gif';
 
 function Logo() {
-	return <div className='landing-logo'></div>;
+	return (
+		<div className='landing-logo'>
+			<img src={startingAnimation} alt='spiderweb' width='100%'></img>
+		</div>
+	);
 }
 
 export default Logo;
