@@ -1,11 +1,12 @@
 import '../../styles/Box.css';
+
 import gifAnimation from '../../assets/gif.gif';
 import JSAnimation from '../../assets/jsAnimation/JSAnimation';
 import flashAnimation from '../../assets/flash.gif';
 import CSSAnimation from '../../assets/cssAnimation/CSSAnimation';
 import SVGAnimation from '../../assets/svgAnimation/SVGAnimation';
 import CanvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
-//import videoAnim from '../../assets/Video.gif';
+import videoAnimation from '../../assets/html5_video.mp4';
 import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
 
@@ -29,7 +30,11 @@ function Animation({ animationId, color, isActive }) {
 		css: <CSSAnimation />,
 		svg: <SVGAnimation />,
 		canvas: <CanvasAnimation />,
-		video: 'asd',
+		video: (
+			<video width='300' height='300' autoplay controls loop>
+				<source src={videoAnimation} type='video/mp4' />
+			</video>
+		),
 		webgl: <WebGLAnimation />,
 		lottie: <LottieAnimation />,
 

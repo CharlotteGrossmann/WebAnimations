@@ -1,4 +1,7 @@
 import './CSSAnimation.css';
+
+import React from 'react';
+
 function CSSAnimation() {
 	const componentRef = React.useRef();
 	return (
