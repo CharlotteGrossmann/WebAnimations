@@ -8,7 +8,8 @@ import CanvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
 //import videoAnim from '../../assets/Video.gif';
 import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
-function Animation({ animationId, color }) {
+
+function Animation({ animationId, color, isActive }) {
 	var dict = {
 		gif: (
 			<img

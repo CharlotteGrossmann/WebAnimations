@@ -1,5 +1,6 @@
 import './CSSAnimation.css';
 function CSSAnimation() {
+	const componentRef = React.useRef();
 	return (
 		<div className='CSSAnimation'>
 			<span className='css-animation-title'>CSS</span>

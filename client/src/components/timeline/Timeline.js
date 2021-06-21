@@ -4,11 +4,61 @@ import '../../styles/Timeline.css';
 import Background from '../background/Background';
 import TableTextBox from './../tableTextBox/TableTextBox';
 function Timeline() {
+	/*const cssAnimationTrigger = document
+		.getElementsByClassName('CSSAnimation')[0]
+		.getBoundingClientRect();
+	const svgAnimationTrigger = document
+		.getElementsByClassName('SVGAnimation')[0]
+		.getBoundingClientRect();
+	const canvasAnimationTrigger = document
+		.getElementsByClassName('canvasAnimation')[0]
+		.getBoundingClientRect();
+	//const videoAnimtaionTrigger= document.getElementsByClassName('videoAnimation')[0];
+	const lottieAnimationTrigger = document
+		.getElementsByClassName('lottieAnimation')[0]
+		.getBoundingClientRect();
+	var timer = null;
+
+	function checkVisibility() {
+		var bounding = [
+			cssAnimationTrigger,
+			svgAnimationTrigger,
+			canvasAnimationTrigger /*,videoAnimationTrigger,
+			lottieAnimationTrigger,
+		];
+
+		//if svg is in viewport -> start animation
+		bounding.forEach((item) => {
+			if (
+				item.top >= 0 &&
+				item.left >= 0 &&
+				item.right <=
+					(window.innerWidth || document.documentElement.clientWidth) &&
+				item.bottom <=
+					(window.innerHeight || document.documentElement.clientHeight)
+			) {
+				console.log('visible');
+			} else {
+				console.log('not visible');
+			}
+		});
+	}
+	window.addEventListener(
+		'scroll',
+		() => {
+			if (timer !== null) {
+				clearTimeout(timer);
+			}
+			timer = setTimeout(checkVisibility(), 150);
+		},
+		false
+	);*/
+
 	return (
 		<div className='time-line'>
 			<Background />
 			<div className='time-line-left-column'>
-				<section className='time-line-time-line-text '>
+				<section className='time-line-text '>
 					<Animation animationId='gif' float='left' color='blue' />
 				</section>
 				<section className='time-line-text'>
@@ -53,7 +103,13 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='svg' float='left' color='lime' />
+					<Animation
+						animationId='svg'
+						float='left'
+						color='lime'
+						isActive='false'
+						onload='getSVGAnimation()'
+					/>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -72,7 +128,13 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='video' float='left' color='orange' />
+					<Animation
+						animationId='video'
+						float='left'
+						color='orange'
+						isActive='false'
+						onload='getVideoAnimation()'
+					/>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -91,7 +153,13 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='lottie' float='left' color='turquoise' />
+					<Animation
+						animationId='lottie'
+						float='left'
+						color='turquoise'
+						isActive='false'
+						onload='getLottieAnimation()'
+					/>
 				</section>
 			</div>
 
@@ -147,7 +215,13 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='css' float='right' color='yellow' />
+					<Animation
+						animationId='css'
+						float='right'
+						color='yellow'
+						isActive='false'
+						onload='getCSSAnimation()'
+					/>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -172,7 +246,13 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='canvas' float='right' color='purple' />
+					<Animation
+						animationId='canvas'
+						float='right'
+						color='purple'
+						isActive='false'
+						onload='getCanvasAnimation()'
+					/>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
