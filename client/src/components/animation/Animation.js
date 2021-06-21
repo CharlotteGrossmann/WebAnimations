@@ -4,7 +4,7 @@ import JSAnimation from '../../assets/jsAnimation/JSAnimation';
 import flashAnimation from '../../assets/flash.gif';
 import CSSAnimation from '../../assets/cssAnimation/CSSAnimation';
 import SVGAnimation from '../../assets/svgAnimation/SVGAnimation';
-//import canvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
+import CanvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
 //import videoAnim from '../../assets/Video.gif';
 import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
@@ -17,7 +17,7 @@ function Animation({ animationId, color }) {
 				width='100%'
 			></img>
 		),
-		js: <JSAnimation />,
+		js: 'sdgsdfg,', //<JSAnimation />,
 		flash: (
 			<img
 				src={flashAnimation}
@@ -27,7 +27,7 @@ function Animation({ animationId, color }) {
 		),
 		css: <CSSAnimation />,
 		svg: <SVGAnimation />,
-		canvas: 'asd',
+		canvas: <CanvasAnimation />,
 		video: 'asd',
 		webgl: <WebGLAnimation />,
 		lottie: <LottieAnimation />,

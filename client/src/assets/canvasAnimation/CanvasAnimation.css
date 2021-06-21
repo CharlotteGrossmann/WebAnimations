@@ -1,0 +1,13 @@
+.canvas {
+	width: 300px;
+	height: 300px;
+	overflow: hidden;
+}
+#canvas1 {
+	position: relative;
+	width: 300px;
+	height: 300px;
+	top: 0;
+	left: 0;
+	filter: url('#goo');
+}
