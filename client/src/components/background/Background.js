@@ -1,12 +1,18 @@
+import React, { useRef, useEffect } from 'react';
 import '../../styles/Background.css';
 function Background() {
-	var tooltip = document.getElementById('tooltip');
+	const tooltipRef = useRef();
+	var tooltip;
 	var mouseX = '';
 	var mouseY = '';
 
-	document.body.addEventListener('mousemove', (event) => {
-		mouseX = event.x;
-		mouseY = event.y;
+	useEffect(() => {
+		tooltip = tooltipRef.current;
+
+		document.body.addEventListener('mousemove', (event) => {
+			mouseX = event.x;
+			mouseY = event.y;
+		});
 	});
 	function Show(name) {
 		if (tooltip) {
@@ -22,7 +28,7 @@ function Background() {
 	}
 	return (
 		<div className='background'>
-			<span id='tooltip'></span>
+			<span id='tooltip' ref={tooltipRef}></span>
 			<svg
 				xmlns='http://www.w3.org/2000/svg'
 				xmlnsXlink='http://www.w3.org/1999/xlink'
