@@ -1,24 +1,25 @@
 import './CanvasAnimation.css';
 import forms from './forms.png';
+import React, { useRef, useEffect } from 'react';
 function CanvasAnimation() {
 	// variables
-	const canvas = document.getElementById('canvas1');
-	const sprite = new Image();
-	sprite.src = forms;
-	let hue = 0;
-	let particles = [];
-	let numberOfParticles = 100;
-	let radius = window.innerWidth / 5;
+	const canvasRef = useRef();
+	useEffect(() => {
+		const canvas = canvasRef.current;
+		const sprite = new Image();
+		sprite.src = forms;
+		let hue = 0;
+		let particles = [];
+		let numberOfParticles = 100;
+		let radius = window.innerWidth / 5;
 
-	// handle mouse
-	const mouse = {
-		x: 0,
-		y: 0,
-		radius: 40,
-		autopilotAngle: 0,
-	};
-
-	if (canvas) {
+		// handle mouse
+		const mouse = {
+			x: 0,
+			y: 0,
+			radius: 40,
+			autopilotAngle: 0,
+		};
 		const ctx = canvas.getContext('2d');
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
@@ -138,11 +139,11 @@ function CanvasAnimation() {
 			clearInterval(autopilot);
 			autopilot = undefined;
 		});
-	}
+	});
 
 	return (
 		<div className='canvasn'>
-			<canvas id='canvas1'></canvas>
+			<canvas id='canvas1' ref={canvasRef}></canvas>
 			<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
 				<defs>
 					<filter id='goo'>

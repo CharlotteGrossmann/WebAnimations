@@ -1,13 +1,20 @@
 import './CSSAnimation.css';
 
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-function CSSAnimation() {
-	const componentRef = React.useRef();
+function CSSAnimation(isActive) {
+	const CSSAnimationRef = useRef();
+	const CSSAnimationTitleRef = useRef();
+	const CSSAnimationLineRef = useRef();
+
 	return (
-		<div className='CSSAnimation'>
-			<span className='css-animation-title'>CSS</span>
-			<span className='css-animation-line'>_______________</span>
+		<div className='CSSAnimation' ref={CSSAnimationRef}>
+			<span className='css-animation-title' ref={CSSAnimationTitleRef}>
+				CSS
+			</span>
+			<span className='css-animation-line' ref={CSSAnimationLineRef}>
+				_______________
+			</span>
 		</div>
 	);
 }

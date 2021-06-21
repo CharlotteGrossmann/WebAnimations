@@ -19,7 +19,7 @@ function Animation({ animationId, color, isActive }) {
 				width='100%'
 			></img>
 		),
-		js: 'sdgsdfg,', //<JSAnimation />,
+		js: <JSAnimation isActive={isActive} />,
 		flash: (
 			<img
 				src={flashAnimation}
@@ -27,16 +27,16 @@ function Animation({ animationId, color, isActive }) {
 				width='100%'
 			></img>
 		),
-		css: <CSSAnimation />,
-		svg: <SVGAnimation />,
-		canvas: <CanvasAnimation />,
+		css: <CSSAnimation isActive={isActive} />,
+		svg: <SVGAnimation isActive={isActive} />,
+		canvas: <CanvasAnimation isActive={isActive} />,
 		video: (
 			<video width='300' height='300' autoplay controls loop>
 				<source src={videoAnimation} type='video/mp4' />
 			</video>
 		),
 		webgl: <WebGLAnimation />,
-		lottie: <LottieAnimation />,
+		lottie: <LottieAnimation isActive={isActive} />,
 
 		//insert all aimation paths here
 	};

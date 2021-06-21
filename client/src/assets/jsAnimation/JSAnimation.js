@@ -1,67 +1,68 @@
 import './JSAnimation.css';
+import React, { useRef, useEffect } from 'react';
 
 function JSAnimation() {
 	var mouseX;
 	var mouseY;
+	var JSAnimationShipRef = useRef();
+	var JSAnimationInstructionRef = useRef();
+	var JSAnimationLineRef = useRef();
+	useEffect(() => {
+		JSAnimationShipRef.current.parentElement.addEventListener(
+			'mouseover',
+			(event) => {
+				JSAnimationShipRef.current.style.color = 'red';
+				JSAnimationInstructionRef.current.style.color = 'grey';
+				JSAnimationLineRef.current.classList.add('move-line');
+			}
+		);
 
-	document
-		.getElementById('js-animation-ship')
-		.parentElement.addEventListener('mouseover', (event) => {
-			document.getElementById('js-animation-ship').style.color = 'red';
-			document.getElementsByClassName(
-				'js-animation-instruction'
-			)[0].style.color = 'grey';
-			document
-				.getElementsByClassName('js-animation-line')[0]
-				.classList.add('move-line');
-		});
+		JSAnimationShipRef.current.parentElement.addEventListener(
+			'mouseleave',
+			(event) => {
+				JSAnimationShipRef.current.style.color = 'grey';
 
-	document
-		.getElementById('js-animation-ship')
-		.parentElement.addEventListener('mouseleave', (event) => {
-			document.getElementById('js-animation-ship').style.color = 'grey';
+				JSAnimationInstructionRef.current.style.color = 'red';
+				JSAnimationShipRef.current.classList.add('default-position');
+			}
+		);
 
-			document.getElementsByClassName(
-				'js-animation-instruction'
-			)[0].style.color = 'red';
-			document
-				.getElementById('js-animation-ship')
-				.classList.add('default-position');
-		});
+		JSAnimationShipRef.current.parentElement.addEventListener(
+			'click',
+			(event) => {
+				JSAnimationShipRef.current.classList.remove('default-position');
 
-	document
-		.getElementById('js-animation-ship')
-		.parentElement.addEventListener('click', (event) => {
-			document
-				.getElementById('js-animation-ship')
-				.classList.remove('default-position');
+				mouseX =
+					event.x - JSAnimationShipRef.current.parentElement.offsetLeft - 50;
+				mouseY =
+					event.y -
+					JSAnimationShipRef.current.parentElement.getBoundingClientRect().top -
+					50;
 
-			mouseX =
-				event.x -
-				document.getElementById('js-animation-ship').parentElement.offsetLeft -
-				50;
-			mouseY =
-				event.y -
-				document
-					.getElementById('js-animation-ship')
-					.parentElement.getBoundingClientRect().top -
-				50;
-
-			document.getElementById('js-animation-ship').style.transform =
-				'translate(' + mouseX + 'px, ' + mouseY + 'px)';
-		});
+				JSAnimationShipRef.current.style.transform =
+					'translate(' + mouseX + 'px, ' + mouseY + 'px)';
+			}
+		);
+	});
 
 	return (
 		<div
 			className='JSAnimation'
 			id='js-animation-ship'
+			ref={JSAnimationShipRef}
 			style={{ color: 'grey' }}
 		>
-			<span className='js-animation-instruction' style={{ color: 'red' }}>
+			<span
+				className='js-animation-instruction'
+				ref={JSAnimationInstructionRef}
+				style={{ color: 'red' }}
+			>
 				Click in this Box
 			</span>
 			<span className='js-animation-title'>JS</span>
-			<span className='js-animation-line'>____________</span>
+			<span className='js-animation-line' ref={JSAnimationLineRef}>
+				____________
+			</span>
 		</div>
 	);
 }

@@ -3,23 +3,24 @@ import Animation from '../animation/Animation';
 import '../../styles/Timeline.css';
 import Background from '../background/Background';
 import TableTextBox from './../tableTextBox/TableTextBox';
+import React, { useRef } from 'react';
 function Timeline() {
-	/*const cssAnimationTrigger = document
-		.getElementsByClassName('CSSAnimation')[0]
-		.getBoundingClientRect();
-	const svgAnimationTrigger = document
-		.getElementsByClassName('SVGAnimation')[0]
-		.getBoundingClientRect();
-	const canvasAnimationTrigger = document
-		.getElementsByClassName('canvasAnimation')[0]
-		.getBoundingClientRect();
-	//const videoAnimtaionTrigger= document.getElementsByClassName('videoAnimation')[0];
-	const lottieAnimationTrigger = document
-		.getElementsByClassName('lottieAnimation')[0]
-		.getBoundingClientRect();
 	var timer = null;
 
-	function checkVisibility() {
+	/* function checkVisibility() {
+		const cssAnimationTrigger = CSSAnimationLineRef.current.getBoundingClientRect(); /*  document
+			.getElementsByClassName('CSSAnimation')[0]
+			.getBoundingClientRect(); 
+		const svgAnimationTrigger = document
+			.getElementsByClassName('SVGAnimation')[0]
+			.getBoundingClientRect();
+		const canvasAnimationTrigger = document
+			.getElementsByClassName('canvasAnimation')[0]
+			.getBoundingClientRect();
+		//const videoAnimtaionTrigger= document.getElementsByClassName('videoAnimation')[0];
+		const lottieAnimationTrigger = document
+			.getElementsByClassName('lottieAnimation')[0]
+			.getBoundingClientRect();
 		var bounding = [
 			cssAnimationTrigger,
 			svgAnimationTrigger,
@@ -52,7 +53,7 @@ function Timeline() {
 			timer = setTimeout(checkVisibility(), 150);
 		},
 		false
-	);*/
+	); */
 
 	return (
 		<div className='time-line'>
@@ -108,7 +109,6 @@ function Timeline() {
 						float='left'
 						color='lime'
 						isActive='false'
-						onload='getSVGAnimation()'
 					/>
 				</section>
 				<section className='time-line-text'>
@@ -133,7 +133,6 @@ function Timeline() {
 						float='left'
 						color='orange'
 						isActive='false'
-						onload='getVideoAnimation()'
 					/>
 				</section>
 				<section className='time-line-text'>
@@ -158,7 +157,6 @@ function Timeline() {
 						float='left'
 						color='turquoise'
 						isActive='false'
-						onload='getLottieAnimation()'
 					/>
 				</section>
 			</div>
@@ -219,8 +217,7 @@ function Timeline() {
 						animationId='css'
 						float='right'
 						color='yellow'
-						isActive='false'
-						onload='getCSSAnimation()'
+						isActive='true'
 					/>
 				</section>
 				<section className='time-line-text'>
@@ -251,7 +248,6 @@ function Timeline() {
 						float='right'
 						color='purple'
 						isActive='false'
-						onload='getCanvasAnimation()'
 					/>
 				</section>
 				<section className='time-line-text'>
