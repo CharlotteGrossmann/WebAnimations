@@ -6,7 +6,9 @@ function CSSAnimation(isActive) {
 	const CSSAnimationRef = useRef();
 	const CSSAnimationTitleRef = useRef();
 	const CSSAnimationLineRef = useRef();
-
+	/* window.addEventListener('scroll', () => {
+		console.log(isActive);
+	}); */
 	return (
 		<div className='CSSAnimation' ref={CSSAnimationRef}>
 			<span className='css-animation-title' ref={CSSAnimationTitleRef}>

@@ -4,6 +4,8 @@ import React, { useRef, useEffect } from 'react';
 function CanvasAnimation() {
 	// variables
 	const canvasRef = useRef();
+	const canvasBoxRef = useRef();
+	var timer = null;
 	useEffect(() => {
 		const canvas = canvasRef.current;
 		const sprite = new Image();
@@ -23,7 +25,7 @@ function CanvasAnimation() {
 		const ctx = canvas.getContext('2d');
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
-		canvas.addEventListener('mousemove', function (e) {
+		window.addEventListener('mousemove', function (e) {
 			mouse.x = e.x;
 			mouse.y = e.y;
 		});
@@ -113,7 +115,6 @@ function CanvasAnimation() {
 			requestAnimationFrame(animate);
 		}
 		animate();
-
 		window.addEventListener('resize', function () {
 			particles = [];
 			canvas.width = window.innerWidth;
@@ -142,7 +143,7 @@ function CanvasAnimation() {
 	});
 
 	return (
-		<div className='canvasn'>
+		<div className='canvasAnimation' ref={canvasBoxRef}>
 			<canvas id='canvas1' ref={canvasRef}></canvas>
 			<svg xmlns='http://www.w3.org/2000/svg' version='1.1'>
 				<defs>

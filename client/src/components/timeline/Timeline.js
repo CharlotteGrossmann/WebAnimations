@@ -4,31 +4,43 @@ import '../../styles/Timeline.css';
 import Background from '../background/Background';
 import TableTextBox from './../tableTextBox/TableTextBox';
 import React, { useRef } from 'react';
+import { useEffect } from 'react/cjs/react.development';
 function Timeline() {
 	var timer = null;
 
+	var cssIsActive = false;
+	var CSSAnimationLineRef = useRef();
+
+	var svgIsActive = false;
+	var SVGAnimationLineRef = useRef();
+
+	var canvasIsActive = false;
+	var canvasAnimationTimeLineRef = useRef();
+
+	var lottieIsActive = false;
+	var lottieAnimationLineRef = useRef();
+
+	/* useEffect(() => {
+		window.addEventListener('scroll', () => {
+			if (timer !== null) {
+				clearTimeout(timer);
+			}
+			timer = setTimeout(checkVisibility(), 1000);
+		});
+	}); */
+
 	/* function checkVisibility() {
-		const cssAnimationTrigger = CSSAnimationLineRef.current.getBoundingClientRect(); /*  document
-			.getElementsByClassName('CSSAnimation')[0]
-			.getBoundingClientRect(); 
-		const svgAnimationTrigger = document
-			.getElementsByClassName('SVGAnimation')[0]
-			.getBoundingClientRect();
-		const canvasAnimationTrigger = document
-			.getElementsByClassName('canvasAnimation')[0]
-			.getBoundingClientRect();
-		//const videoAnimtaionTrigger= document.getElementsByClassName('videoAnimation')[0];
-		const lottieAnimationTrigger = document
-			.getElementsByClassName('lottieAnimation')[0]
-			.getBoundingClientRect();
-		var bounding = [
+		const cssAnimationTrigger = CSSAnimationLineRef.current.getBoundingClientRect();
+		const svgAnimationTrigger = SVGAnimationLineRef.current.getBoundingClientRect();
+		const canvasAnimationTrigger = canvasAnimationTimeLineRef.current.getBoundingClientRect();
+		const lottieAnimationTrigger = lottieAnimationLineRef.current.getBoundingClientRect();
+
+		let bounding = [
 			cssAnimationTrigger,
 			svgAnimationTrigger,
-			canvasAnimationTrigger /*,videoAnimationTrigger,
+			canvasAnimationTrigger,
 			lottieAnimationTrigger,
 		];
-
-		//if svg is in viewport -> start animation
 		bounding.forEach((item) => {
 			if (
 				item.top >= 0 &&
@@ -38,23 +50,43 @@ function Timeline() {
 				item.bottom <=
 					(window.innerHeight || document.documentElement.clientHeight)
 			) {
-				console.log('visible');
+				switch (item) {
+					case cssAnimationTrigger:
+						cssIsActive = true;
+						break;
+					case svgAnimationTrigger:
+						svgIsActive = true;
+						break;
+					case lottieAnimationTrigger:
+						lottieIsActive = true;
+						break;
+					case canvasAnimationTrigger:
+						canvasIsActive = true;
+						break;
+					default:
+						break;
+				}
 			} else {
-				console.log('not visible');
+				switch (item) {
+					case cssAnimationTrigger:
+						cssIsActive = false;
+						break;
+					case svgAnimationTrigger:
+						svgIsActive = false;
+						break;
+					case lottieAnimationTrigger:
+						lottieIsActive = false;
+						break;
+					case canvasAnimationTrigger:
+						canvasIsActive = false;
+						break;
+					default:
+						break;
+				}
 			}
-		});
+		}); 
 	}
-	window.addEventListener(
-		'scroll',
-		() => {
-			if (timer !== null) {
-				clearTimeout(timer);
-			}
-			timer = setTimeout(checkVisibility(), 150);
-		},
-		false
-	); */
-
+*/
 	return (
 		<div className='time-line'>
 			<Background />
@@ -105,12 +137,14 @@ function Timeline() {
 					<Animation animationId='flash' float='left' color='cyan' />
 				</section>
 				<section className='time-line-text'>
-					<Animation
-						animationId='svg'
-						float='left'
-						color='lime'
-						isActive='false'
-					/>
+					<span ref={SVGAnimationLineRef}>
+						<Animation
+							animationId='svg'
+							float='left'
+							color='lime'
+							svgIsActive={svgIsActive}
+						/>
+					</span>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -129,12 +163,7 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation
-						animationId='video'
-						float='left'
-						color='orange'
-						isActive='false'
-					/>
+					<Animation animationId='video' float='left' color='orange' />
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -153,12 +182,14 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation
-						animationId='lottie'
-						float='left'
-						color='turquoise'
-						isActive='false'
-					/>
+					<span ref={lottieAnimationLineRef}>
+						<Animation
+							animationId='lottie'
+							float='left'
+							color='turquoise'
+							lottieIsActive={lottieIsActive}
+						/>
+					</span>
 				</section>
 			</div>
 
@@ -189,12 +220,14 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation
-						animationId='css'
-						float='right'
-						color='yellow'
-						isActive='true'
-					/>
+					<span ref={CSSAnimationLineRef}>
+						<Animation
+							animationId='css'
+							float='right'
+							color='yellow'
+							cssIsActive={cssIsActive}
+						/>
+					</span>
 				</section>
 				<section className='time-line-text '>
 					<Animation animationId='js' float='right' color='red' />
@@ -245,12 +278,14 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation
-						animationId='canvas'
-						float='right'
-						color='purple'
-						isActive='false'
-					/>
+					<span ref={canvasAnimationTimeLineRef}>
+						<Animation
+							animationId='canvas'
+							float='right'
+							color='purple'
+							canvasIsActive={canvasIsActive}
+						/>
+					</span>
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox

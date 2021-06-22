@@ -9,8 +9,15 @@ import CanvasAnimation from '../../assets/canvasAnimation/CanvasAnimation';
 import videoAnimation from '../../assets/html5_video.mp4';
 import WebGLAnimation from '../../assets/webglAnimation/WebGLAnimation';
 import LottieAnimation from '../../assets/lottieAnimation/LottieAnimation';
-
-function Animation({ animationId, color, isActive }) {
+import React, { useEffect, useRef } from 'react';
+function Animation({
+	animationId,
+	color,
+	cssIsActive,
+	svgIsActive,
+	lottieIsActive,
+	canvasIsActive,
+}) {
 	var dict = {
 		gif: (
 			<img
@@ -19,7 +26,7 @@ function Animation({ animationId, color, isActive }) {
 				width='100%'
 			></img>
 		),
-		js: <JSAnimation isActive={isActive} />,
+		js: <JSAnimation />,
 		flash: (
 			<img
 				src={flashAnimation}
@@ -27,20 +34,26 @@ function Animation({ animationId, color, isActive }) {
 				width='100%'
 			></img>
 		),
-		css: <CSSAnimation isActive={isActive} />,
-		svg: <SVGAnimation isActive={isActive} />,
-		canvas: <CanvasAnimation isActive={isActive} />,
+		css: <CSSAnimation isActive={cssIsActive} />,
+		svg: <SVGAnimation isActive={svgIsActive} />,
+		canvas: <CanvasAnimation isActive={canvasIsActive} />,
 		video: (
 			<video width='300' height='300' autoplay controls loop>
 				<source src={videoAnimation} type='video/mp4' />
 			</video>
 		),
 		webgl: <WebGLAnimation />,
-		lottie: <LottieAnimation isActive={isActive} />,
+		lottie: <LottieAnimation isActive={lottieIsActive} />,
 
 		//insert all aimation paths here
 	};
 	var content = dict[animationId];
+	if (cssIsActive == true) {
+		console.log(cssIsActive);
+	}
+	if (svgIsActive == true) {
+		console.log(svgIsActive);
+	}
 
 	return (
 		<div className=''>

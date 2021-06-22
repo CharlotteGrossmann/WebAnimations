@@ -12,7 +12,7 @@ function JSAnimation() {
 			'mouseover',
 			(event) => {
 				JSAnimationShipRef.current.style.color = 'red';
-				JSAnimationInstructionRef.current.style.color = 'grey';
+				JSAnimationInstructionRef.current.style.visibility = 'hidden';
 				JSAnimationLineRef.current.classList.add('move-line');
 			}
 		);
@@ -22,7 +22,7 @@ function JSAnimation() {
 			(event) => {
 				JSAnimationShipRef.current.style.color = 'grey';
 
-				JSAnimationInstructionRef.current.style.color = 'red';
+				JSAnimationInstructionRef.current.style.visibility = 'visible';
 				JSAnimationShipRef.current.classList.add('default-position');
 			}
 		);
