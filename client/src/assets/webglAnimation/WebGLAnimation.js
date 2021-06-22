@@ -16,9 +16,6 @@ function WebGLAnimation() {
 		WebGLAnimationBoxRef.current.addEventListener('mouseover', () => {
 			WebGLAnimationInstructionRef.current.style.visibility = 'hidden';
 		});
-		WebGLAnimationBoxRef.current.addEventListener('mouseout', () => {
-			WebGLAnimationInstructionRef.current.style.visibility = 'visible';
-		});
 	});
 	return (
 		<div id='WebGlAnimation-box' ref={WebGLAnimationBoxRef}>
@@ -27,6 +24,7 @@ function WebGLAnimation() {
 				style={{
 					height: 300 + 'px',
 					width: 300 + 'px',
+					position: 'relative',
 				}}
 			/>
 			<p
@@ -35,6 +33,11 @@ function WebGLAnimation() {
 				style={{
 					zIndex: 100,
 					position: 'relative',
+					color: 'blue',
+					fontSize: 40 + 'px',
+					fontFamily: 'Arvo',
+					top: -250 + 'px',
+					left: 50 + 'px',
 				}}
 			>
 				Hover me
