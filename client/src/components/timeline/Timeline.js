@@ -64,6 +64,23 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
+						title='CSS'
+						textId='cssText'
+						float='left'
+						color='yellow'
+					/>
+					<TableTextBox
+						float='left'
+						color='yellow'
+						year='1996'
+						dev='CERN'
+						pro='funktioniert gut auf mobilen Geräten und kann einfach responsive gestaltet werden, Vektor- und Pixelanimationen möglich, SVG-Animationen möglich, gute Performance'
+						con='komplexe, realistische Bewegungen mit bezier easings nicht möglich, nicht alle SVG-Eigenschaften können mittels CSS animiert werden, kann nicht auf neue Inputs des Users reagieren '
+					/>
+				</section>
+
+				<section className='time-line-text'>
+					<SimpleTextBox
 						title='JavaScript'
 						textId='jsText'
 						float='left'
@@ -86,22 +103,6 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<Animation animationId='flash' float='left' color='cyan' />
-				</section>
-				<section className='time-line-text'>
-					<SimpleTextBox
-						title='CSS'
-						textId='cssText'
-						float='left'
-						color='yellow'
-					/>
-					<TableTextBox
-						float='left'
-						color='yellow'
-						year='1996'
-						dev='CERN'
-						pro='funktioniert gut auf mobilen Geräten und kann einfach responsive gestaltet werden, Vektor- und Pixelanimationen möglich, SVG-Animationen möglich, gute Performance'
-						con='komplexe, realistische Bewegungen mit bezier easings nicht möglich, nicht alle SVG-Eigenschaften können mittels CSS animiert werden, kann nicht auf neue Inputs des Users reagieren '
-					/>
 				</section>
 				<section className='time-line-text'>
 					<Animation
@@ -187,6 +188,14 @@ function Timeline() {
 						color='blue'
 					/>
 				</section>
+				<section className='time-line-text'>
+					<Animation
+						animationId='css'
+						float='right'
+						color='yellow'
+						isActive='true'
+					/>
+				</section>
 				<section className='time-line-text '>
 					<Animation animationId='js' float='right' color='red' />
 				</section>
@@ -212,14 +221,7 @@ function Timeline() {
 						color='cyan'
 					/>
 				</section>
-				<section className='time-line-text'>
-					<Animation
-						animationId='css'
-						float='right'
-						color='yellow'
-						isActive='true'
-					/>
-				</section>
+
 				<section className='time-line-text'>
 					<SimpleTextBox
 						title='SVG'
