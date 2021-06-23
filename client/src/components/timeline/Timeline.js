@@ -1,13 +1,12 @@
 import SimpleTextBox from '../simpleTextBox/SimpleTextBox';
 import Animation from '../animation/Animation';
 import '../../styles/Timeline.css';
-import Background from '../background/Background';
 import TableTextBox from './../tableTextBox/TableTextBox';
 import React, { useRef } from 'react';
-import { useEffect } from 'react/cjs/react.development';
+import '../../styles/Background.css';
+import background from '../../assets/rainbow.svg';
+import backgroundMobile from '../../assets/rainbow-mobile.svg';
 function Timeline() {
-	var timer = null;
-
 	var cssIsActive = false;
 	var CSSAnimationLineRef = useRef();
 
@@ -20,76 +19,20 @@ function Timeline() {
 	var lottieIsActive = false;
 	var lottieAnimationLineRef = useRef();
 
-	/* useEffect(() => {
-		window.addEventListener('scroll', () => {
-			if (timer !== null) {
-				clearTimeout(timer);
-			}
-			timer = setTimeout(checkVisibility(), 1000);
-		});
-	}); */
-
-	/* function checkVisibility() {
-		const cssAnimationTrigger = CSSAnimationLineRef.current.getBoundingClientRect();
-		const svgAnimationTrigger = SVGAnimationLineRef.current.getBoundingClientRect();
-		const canvasAnimationTrigger = canvasAnimationTimeLineRef.current.getBoundingClientRect();
-		const lottieAnimationTrigger = lottieAnimationLineRef.current.getBoundingClientRect();
-
-		let bounding = [
-			cssAnimationTrigger,
-			svgAnimationTrigger,
-			canvasAnimationTrigger,
-			lottieAnimationTrigger,
-		];
-		bounding.forEach((item) => {
-			if (
-				item.top >= 0 &&
-				item.left >= 0 &&
-				item.right <=
-					(window.innerWidth || document.documentElement.clientWidth) &&
-				item.bottom <=
-					(window.innerHeight || document.documentElement.clientHeight)
-			) {
-				switch (item) {
-					case cssAnimationTrigger:
-						cssIsActive = true;
-						break;
-					case svgAnimationTrigger:
-						svgIsActive = true;
-						break;
-					case lottieAnimationTrigger:
-						lottieIsActive = true;
-						break;
-					case canvasAnimationTrigger:
-						canvasIsActive = true;
-						break;
-					default:
-						break;
-				}
-			} else {
-				switch (item) {
-					case cssAnimationTrigger:
-						cssIsActive = false;
-						break;
-					case svgAnimationTrigger:
-						svgIsActive = false;
-						break;
-					case lottieAnimationTrigger:
-						lottieIsActive = false;
-						break;
-					case canvasAnimationTrigger:
-						canvasIsActive = false;
-						break;
-					default:
-						break;
-				}
-			}
-		}); 
-	}
-*/
 	return (
 		<div className='time-line'>
-			<Background />
+			<img
+				className='background-svg'
+				alt=''
+				src={background}
+				style={{ width: window.innerWidth, height: 'auto' }}
+			/>
+			<img
+				className='background-svg-mobile'
+				alt=''
+				src={backgroundMobile}
+				style={{ width: window.innerWidth, height: 'auto' }}
+			/>
 			<div className='time-line-left-column'>
 				<section className='time-line-text '>
 					<Animation animationId='gif' float='left' color='blue' />

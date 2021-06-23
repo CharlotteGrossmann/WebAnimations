@@ -1,73 +1,15 @@
-#css {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_15);
-}
-#js {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_13);
-}
-#web-gl {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_19);
-}
-#flash {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_14);
-}
-#canvas {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_17);
-}
-#background {
-	fill: linear-gradient(#000000 24.37%, #000033 64.37%, #282828 90.12%);
-}
-#lottie {
-	fill: url(#Unbenannter_Verlauf_2);
-}
-#video {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_18);
-}
-#svg {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_16);
-}
-#gif {
-	fill-rule: evenodd;
-	fill: url(#Unbenannter_Verlauf_12);
-}
-
-#start {
-	fill: #fff;
-	stroke: white;
-}
-ellipse.time-line-line {
-	fill: none;
-	stroke: #fff;
-	stroke-miterlimit: 3.1317977905273438;
-	stroke-width: 1.9943877177920715px;
-}
-
-#number {
-	fill: black;
-}
-
-.time-line-line {
-	fill: none;
-	stroke: #000;
-	stroke-width: 2px;
-}
 .background-svg {
 	position: absolute;
 	z-index: -100;
+	overflow: hidden;
+	left: 0;
+	top: 0;
 }
-
-#tooltip {
-	position: fixed;
-	background: rgb(255, 250, 255);
-	border: solid black 1px;
-	border-radius: 10%;
-	padding: 5px;
-	z-index: 100;
-	color: black;
+.background-svg-mobile {
+	position: absolute;
+	z-index: -100;
+	overflow: hidden;
+	left: 0;
+	top: 0;
+	visibility: hidden;
 }
