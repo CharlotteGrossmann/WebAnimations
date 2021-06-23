@@ -8,11 +8,14 @@ Clone repository to your computer
 
 
 ### Install npm packages
-
+In root folder
 ```
 npm install
 ```
-
+and again in the client folder
+```
+npm install
+```
 ### For live view during coding
 
 ```
