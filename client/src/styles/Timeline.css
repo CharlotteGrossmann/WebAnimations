@@ -10,8 +10,40 @@
 
 .time-line-left-column {
 	float: left;
+	margin-left: 18%;
 }
 
 .time-line-right-column {
 	float: right;
+	margin-right: 18%;
 }
+
+
+
+/* Responsive */
+
+
+/* Tablet */
+
+@media only screen and (max-width: 1024px) {
+	.time-line-left-column {
+		margin-left: 5%;
+	}
+	.time-line-right-column {
+		margin-right: 5%;
+	}
+
+
+
+/* Phone */
+
+@media only screen and (max-width: 768px) {
+	.time-line-left-column {
+		margin-left: 0%;
+	}
+	.time-line-right-column {
+		margin-right: 0%;
+	}
+}
+
+	
