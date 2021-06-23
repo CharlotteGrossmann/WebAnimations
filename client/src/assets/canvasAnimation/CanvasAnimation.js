@@ -25,10 +25,10 @@ function CanvasAnimation() {
 		const ctx = canvas.getContext('2d');
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
-		window.addEventListener('mousemove', function (e) {
+		/* window.addEventListener('mousemove', function (e) {
 			mouse.x = e.x;
 			mouse.y = e.y;
-		});
+		}); */
 		// particles
 		class Particle {
 			constructor(x, y, radius) {
