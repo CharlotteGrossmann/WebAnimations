@@ -11,8 +11,8 @@ function Landing() {
 			</h1>
 			<Logo className='landing-logo' />
 			<p className='landing-intro'>
-				Eine interctive Reise durch die Geschichte der Animationstechnologien im
-				Web. Von Hannah, Josepha & Lotte.
+				Eine interaktive Reise durch die Geschichte der Animationstechnologien
+				im Web. Von Hannah, Josepha & Lotte.
 			</p>
 		</div>
 	);
