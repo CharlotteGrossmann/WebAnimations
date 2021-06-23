@@ -2,38 +2,23 @@ import React, { useEffect, useRef } from 'react';
 import lottie from 'lottie-web';
 
 function LottieAnimation() {
-	var debugLottieAnimation = true;
 	const container = useRef(null);
+	const lottieBoxRef = useRef();
+	const lottieAnimationInstructionRef = useRef();
 
-	/* var myElement = document.getElementById('lottieAnimation-box');
-	document.addEventListener('scroll', () => {
-		if (myElement) {
-			var bounding = myElement.getBoundingClientRect();
-			if (debugLottieAnimation) {
-				console.log(bounding);
-			}
-			//if lottie is in viewport -> start animation
-			if (
-				bounding.top >= 0 &&
-				bounding.left >= 0 &&
-				bounding.right <=
-					(window.innerWidth || document.documentElement.clientWidth) &&
-				bounding.bottom <=
-					(window.innerHeight || document.documentElement.clientHeight)
-			) {
-				lottie.play();
-				if (debugLottieAnimation) {
-					console.log('Element is in the viewport!');
-				}
-			} else {
-				lottie.pause();
+	useEffect(() => {
+		var myElement = lottieBoxRef.current;
+		myElement.addEventListener('mouseover', () => {
+			lottie.play();
 
-				if (debugLottieAnimation) {
-					console.log('Element is not in the viewport!');
-				}
-			}
-		}
-	}); */
+			lottieAnimationInstructionRef.current.style.visibility = 'hidden';
+		});
+		myElement.addEventListener('mouseleave', () => {
+			lottieAnimationInstructionRef.current.style.visibility = 'visible';
+			lottie.pause();
+		});
+	});
+
 	useEffect(() => {
 		lottie.loadAnimation({
 			container: container.current,
@@ -41,7 +26,7 @@ function LottieAnimation() {
 			width: '300px',
 			height: '300px',
 			loop: true,
-			autoplay: true,
+			autoplay: false,
 			animationData: require('./lottie.json'),
 		});
 
@@ -51,8 +36,23 @@ function LottieAnimation() {
 	}, []);
 
 	return (
-		<div id='lottieAnimation-box'>
+		<div id='lottieAnimation-box' ref={lottieBoxRef}>
 			<div ref={container} />
+			<p
+				id='lottie-instruction'
+				ref={lottieAnimationInstructionRef}
+				style={{
+					zIndex: 100,
+					position: 'relative',
+					color: 'grey',
+					fontSize: 40 + 'px',
+					fontFamily: 'Arvo',
+					top: -100 + 'px',
+					left: 50 + 'px',
+				}}
+			>
+				Hover me
+			</p>
 		</div>
 	);
 }

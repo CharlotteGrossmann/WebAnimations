@@ -5,6 +5,7 @@ function CanvasAnimation() {
 	// variables
 	const canvasRef = useRef();
 	const canvasBoxRef = useRef();
+	const canvasAnimationInstructionRef = useRef();
 	var timer = null;
 	useEffect(() => {
 		const canvas = canvasRef.current;
@@ -14,6 +15,7 @@ function CanvasAnimation() {
 		let particles = [];
 		let numberOfParticles = 100;
 		let radius = window.innerWidth / 5;
+		let isCanvasPaused = true;
 
 		// handle mouse
 		const mouse = {
@@ -25,10 +27,17 @@ function CanvasAnimation() {
 		const ctx = canvas.getContext('2d');
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
-		/* window.addEventListener('mousemove', function (e) {
-			mouse.x = e.x;
-			mouse.y = e.y;
-		}); */
+
+		canvasBoxRef.current.addEventListener('mouseover', () => {
+			canvasAnimationInstructionRef.current.style.visibility = 'hidden';
+			isCanvasPaused = false;
+			animate();
+		});
+		canvasBoxRef.current.addEventListener('mouseleave', () => {
+			canvasAnimationInstructionRef.current.style.visibility = 'visible';
+			isCanvasPaused = true;
+		});
+
 		// particles
 		class Particle {
 			constructor(x, y, radius) {
@@ -103,7 +112,9 @@ function CanvasAnimation() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			for (let i = 0; i < particles.length; i++) {
 				particles[i].draw();
-				particles[i].update();
+				if (isCanvasPaused == false) {
+					particles[i].update();
+				}
 			}
 			handleOverlap();
 			if (particles.length >= numberOfParticles) {
@@ -114,7 +125,7 @@ function CanvasAnimation() {
 			hue += 2;
 			requestAnimationFrame(animate);
 		}
-		animate();
+
 		window.addEventListener('resize', function () {
 			particles = [];
 			canvas.width = window.innerWidth;
@@ -151,6 +162,21 @@ function CanvasAnimation() {
 					</filter>
 				</defs>
 			</svg>
+			<p
+				id='Canvas-instruction'
+				ref={canvasAnimationInstructionRef}
+				style={{
+					zIndex: 100,
+					position: 'relative',
+					color: 'purple',
+					fontSize: 40 + 'px',
+					fontFamily: 'Arvo',
+					top: -250 + 'px',
+					left: 50 + 'px',
+				}}
+			>
+				Hover me
+			</p>
 		</div>
 	);
 }
