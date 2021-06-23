@@ -1,5 +1,5 @@
 //Landing section
-import Logo from '../logo/Logo';
+import startingAnimation from '../../assets/web_animations.gif';
 import '../../styles/Landing.css';
 
 function Landing() {
@@ -9,7 +9,9 @@ function Landing() {
 				<span className='landing-title-small'>The History of </span> <br />
 				<span className='landing-title-big'>Web Animation</span>
 			</h1>
-			<Logo className='landing-logo' />
+			<div className='landing-logo'>
+				<img src={startingAnimation} alt='spiderweb' width='100%'></img>
+			</div>
 			<p className='landing-intro'>
 				Eine interaktive Reise durch die Geschichte der Animationstechnologien
 				im Web. Von Hannah, Josepha & Lotte.

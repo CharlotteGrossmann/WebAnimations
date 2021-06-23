@@ -1,31 +1,5 @@
-import React, { useRef, useEffect } from 'react';
 import '../../styles/Background.css';
 function Background() {
-	const tooltipRef = useRef();
-	var tooltip;
-	var mouseX = '';
-	var mouseY = '';
-
-	/* useEffect(() => {
-		tooltip = tooltipRef.current;
-
-		document.body.addEventListener('mousemove', (event) => {
-			mouseX = event.x;
-			mouseY = event.y;
-		});
-	});
-	function Show(name) {
-		if (tooltip) {
-			tooltip.innerText = name;
-			tooltip.style.left = mouseX + 'px';
-			tooltip.style.top = mouseY + 'px';
-		}
-	}
-	function Hide() {
-		if (tooltip) {
-			tooltip.innerHTML = '<br>';
-		}
-	} */
 	return (
 		<div className='background'>
 			<svg
