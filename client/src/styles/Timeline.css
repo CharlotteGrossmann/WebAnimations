@@ -10,8 +10,38 @@
 
 .time-line-left-column {
 	float: left;
+	margin-left: 20%;
 }
 
 .time-line-right-column {
 	float: right;
+	margin-right: 20%;
+}
+
+/* RESPONSIVE */
+
+/* Tablet */
+@media only screen and (max-width: 1024px) {
+	.time-line-left-column {
+		margin-left: 5%;
+	}
+	.time-line-right-column {
+		margin-right: 5%;
+	}
+}
+
+/* Phone */
+@media only screen and (max-width: 479px) {
+	.background-svg {
+		display: none;
+	}
+	.background-svg-mobile {
+		visibility: visible;
+	}
+	.time-line-left-column {
+		margin-left: 0;
+	}
+	.time-line-right-column {
+		margin-right: 0;
+	}
 }

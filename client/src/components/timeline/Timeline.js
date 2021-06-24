@@ -4,8 +4,9 @@ import '../../styles/Timeline.css';
 import TableTextBox from './../tableTextBox/TableTextBox';
 import React, { useRef } from 'react';
 import '../../styles/Background.css';
+//import Background from '../background/Background';
 import background from '../../assets/rainbow.svg';
-import backgroundMobile from '../../assets/rainbow-mobile.svg';
+import backgroundMobile from '../../assets/rainbow_mobile.svg';
 function Timeline() {
 	var cssIsActive = false;
 	var CSSAnimationLineRef = useRef();
@@ -19,19 +20,24 @@ function Timeline() {
 	var lottieIsActive = false;
 	var lottieAnimationLineRef = useRef();
 
+	let windowWidth = window.innerWidth;
+
+	window.addEventListener('resize', () => {
+		windowWidth = window.innerWidth;
+	});
 	return (
 		<div className='time-line'>
 			<img
 				className='background-svg'
 				alt=''
 				src={background}
-				style={{ width: window.innerWidth, height: 'auto' }}
+				style={{ width: { windowWidth }, height: 'auto' }}
 			/>
 			<img
 				className='background-svg-mobile'
 				alt=''
 				src={backgroundMobile}
-				style={{ width: window.innerWidth, height: 'auto' }}
+				style={{ width: { windowWidth }, height: 'auto' }}
 			/>
 			<div className='time-line-left-column'>
 				<section className='time-line-text '>
@@ -49,35 +55,35 @@ function Timeline() {
 						color='yellow'
 						year='1996'
 						dev='CERN'
-						pro='funktioniert gut auf mobilen Geräten und kann einfach responsive gestaltet werden, Vektor- und Pixelanimationen möglich, SVG-Animationen möglich, gute Performance'
-						con='komplexe, realistische Bewegungen mit bezier easings nicht möglich, nicht alle SVG-Eigenschaften können mittels CSS animiert werden, kann nicht auf neue Inputs des Users reagieren '
+						pro='funktioniert gut auf mobilen Geräten und kann einfach responsive gestaltet werden, Vektor- und Pixelanimationen möglich, gute Performance'
+						con='komplexe, realistische Bewegungen mit bezier easings nicht möglich, kann nicht auf neue Inputs des Users reagieren '
 					/>
 				</section>
 
+				<section className='time-line-text '>
+					<Animation animationId='js' float='right' color='red' />
+				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
-						title='JavaScript'
-						textId='jsText'
-						float='left'
-						color='red'
+						title='Flash'
+						textId='flashText'
+						float='right'
+						color='cyan'
 					/>
 					<TableTextBox
-						float='left'
-						color='red'
-						year='1996'
-						dev='Netscape'
-						pro='mehr Flexibilität und Komplexität als CSS-basierte Animationen, basic Funktionen werden meist durch Einbindung von Libraries erweitert, einfache Animation von SVGs, dynamisch (kann auf Inputs des Users reagieren)'
-						con='erhält SVG-Dateien nicht, wenn sie als Bild eingebettet sind'
+						float='right'
+						color='cyan'
+						year='1997'
+						dev='Macromedia'
+						pro='einfache Erstellung vektorbasierter Animationen, kleine Dateigrößen im SWF Format'
+						con='Browser Plugin zum Abspielen notwendig, funktionierten nicht wirklich auf mobilen Geräten'
 					/>
 					<SimpleTextBox
 						title='Fun Fact'
-						textId='jsFunFact'
-						float='left'
-						color='red'
+						textId='flashFunFact'
+						float='right'
+						color='cyan'
 					/>
-				</section>
-				<section className='time-line-text'>
-					<Animation animationId='flash' float='left' color='cyan' />
 				</section>
 				<section className='time-line-text'>
 					<span ref={SVGAnimationLineRef}>
@@ -135,9 +141,7 @@ function Timeline() {
 					</span>
 				</section>
 			</div>
-
 			{/* ---------------------------------------------------------- */}
-
 			<div className='time-line-right-column'>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -153,7 +157,7 @@ function Timeline() {
 						year='1987'
 						dev='CompuServe'
 						pro='einfach und für jeden zugänglich, Videoinhalte möglich, in jedem Browser abspielbar'
-						con='womöglich große Dateigrößen, kein Alphakanal, kleine Kompression, pixelbasiert (daher nicht skalierbar)'
+						con='womöglich große Dateigrößen, kein Alphakanal, kleine Kompression, nicht skalierbar'
 					/>
 					<SimpleTextBox
 						title='Fun Fact'
@@ -172,30 +176,30 @@ function Timeline() {
 						/>
 					</span>
 				</section>
-				<section className='time-line-text '>
-					<Animation animationId='js' float='right' color='red' />
-				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
-						title='Flash'
-						textId='flashText'
-						float='right'
-						color='cyan'
+						title='JavaScript'
+						textId='jsText'
+						float='left'
+						color='red'
 					/>
 					<TableTextBox
-						float='right'
-						color='cyan'
-						year='1997'
-						dev='Macromedia'
-						pro='einfache Erstellung vektorbasierter Animationen, kleine Dateigrößen im SWF Format'
-						con='Browser Plugin zum Abspielen notwendig, funktionierten nicht wirklich auf mobilen Geräten'
+						float='left'
+						color='red'
+						year='1996'
+						dev='Netscape'
+						pro='mehr Flexibilität und Komplexität als CSS Animationen, Einbindung von Libraries für mehr Optionen, einfache Animation von SVGs, dynamisch (kann auf Inputs des Users reagieren)'
+						con='erhält SVG-Dateien nicht, wenn sie als Bild eingebettet sind'
 					/>
 					<SimpleTextBox
 						title='Fun Fact'
-						textId='flashFunFact'
-						float='right'
-						color='cyan'
+						textId='jsFunFact'
+						float='left'
+						color='red'
 					/>
+				</section>
+				<section className='time-line-text'>
+					<Animation animationId='flash' float='left' color='cyan' />
 				</section>
 
 				<section className='time-line-text'>
@@ -259,10 +263,10 @@ function Timeline() {
 					<TableTextBox
 						float='right'
 						color='turquoise'
-						year='2007'
-						dev='Opera'
-						pro='einfach und für jeden zugänglich, Videoinhalte möglich, in jedem Browser abspielbar'
-						con='womöglich große Dateigrößen, kein Alphakanal, kleine Kompression, pixelbasiert (daher nicht skalierbar)'
+						year='2017'
+						dev='Airbnb'
+						pro='einfache Umsetzung (auch für Designer), kleine Dateigrößen, einfache Einbindung'
+						con='funktioniert nur mit AfterEffects, Übergänge zwischen Screens nicht möglich'
 					/>
 					<SimpleTextBox
 						title='Fun Fact'
