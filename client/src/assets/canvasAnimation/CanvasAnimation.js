@@ -1,16 +1,25 @@
+//canvas animation based on https://codepen.io/franksLaboratory/pen/eYJyrgw
+//import assets, css and react functionality
 import './CanvasAnimation.css';
 import forms from './forms.png';
 import React, { useRef, useEffect } from 'react';
+
 function CanvasAnimation() {
-	// variables
+	// create references
 	const canvasRef = useRef();
 	const canvasBoxRef = useRef();
 	const canvasAnimationInstructionRef = useRef();
-	var timer = null;
+
+	//as soon as component is rendered
 	useEffect(() => {
+		//save the html canvas element in const canvas
 		const canvas = canvasRef.current;
+
+		//create a sprite with imported asset
 		const sprite = new Image();
 		sprite.src = forms;
+
+		//some settings for the display of particles
 		let hue = 0;
 		let particles = [];
 		let numberOfParticles = 100;
@@ -24,22 +33,27 @@ function CanvasAnimation() {
 			radius: 40,
 			autopilotAngle: 0,
 		};
+
 		const ctx = canvas.getContext('2d');
 		canvas.width = window.innerWidth;
 		canvas.height = window.innerHeight;
 
+		//if user hovers animationBox hide instruction text and play animation
 		canvasBoxRef.current.addEventListener('mouseover', () => {
 			canvasAnimationInstructionRef.current.style.visibility = 'hidden';
 			isCanvasPaused = false;
 			animate();
 		});
+
+		//if mouse leaves animationBox show instruction text and pause animation
 		canvasBoxRef.current.addEventListener('mouseleave', () => {
 			canvasAnimationInstructionRef.current.style.visibility = 'visible';
 			isCanvasPaused = true;
 		});
 
-		// particles
+		// create particles
 		class Particle {
+			//settings for particles
 			constructor(x, y, radius) {
 				this.x = x;
 				this.y = y;
@@ -48,6 +62,7 @@ function CanvasAnimation() {
 				this.frameX = Math.floor(Math.random() * 4);
 				this.frameY = Math.floor(Math.random() * 4);
 			}
+			//draw particles on canvas
 			draw() {
 				ctx.drawImage(
 					sprite,
@@ -62,7 +77,7 @@ function CanvasAnimation() {
 				);
 			}
 			update() {
-				// autopilot when mouse leaves canvas
+				//animation
 				if (mouse.x === undefined && mouse.y === undefined) {
 					let newX =
 						radius * 2 * Math.cos(mouse.autopilotAngle * (Math.PI / 180));
@@ -75,6 +90,7 @@ function CanvasAnimation() {
 			}
 		}
 
+		//handle if particles would be drawn onto eachother
 		function handleOverlap() {
 			let overlapping = false;
 			let protection = 500;
@@ -108,6 +124,7 @@ function CanvasAnimation() {
 			}
 		}
 
+		//call animation
 		function animate() {
 			ctx.clearRect(0, 0, canvas.width, canvas.height);
 			for (let i = 0; i < particles.length; i++) {
@@ -126,15 +143,7 @@ function CanvasAnimation() {
 			requestAnimationFrame(animate);
 		}
 
-		window.addEventListener('resize', function () {
-			particles = [];
-			canvas.width = window.innerWidth;
-			canvas.height = window.innerHeight;
-			numberOfParticles = 100;
-			ctx.textBaseline = 'middle';
-			radius = window.innerWidth / 5;
-		});
-
+		//animation speed
 		let autopilot = setInterval(function () {
 			mouse.x = undefined;
 			mouse.y = undefined;

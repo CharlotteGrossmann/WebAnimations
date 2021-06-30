@@ -1,4 +1,5 @@
 //Landing section
+//import asset and css
 import startingAnimation from '../../assets/web_animations.gif';
 import '../../styles/Landing.css';
 

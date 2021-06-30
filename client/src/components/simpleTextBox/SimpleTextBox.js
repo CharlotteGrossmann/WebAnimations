@@ -1,5 +1,8 @@
+//simple text box
+//import css
 import '../../styles/Box.css';
 
+//dictionary with textId and respective text
 function TextBox({ title, textId, color }) {
 	var dict = {
 		gifFunFact:
@@ -41,12 +44,14 @@ function TextBox({ title, textId, color }) {
 		lottieFunFact:
 			'Lottie hat seinen Namen von Charlotte "Lotte" Reiniger, eine deutsche Animationsfilmerin und die führende Pionierin der Silhouetten Animation.',
 	};
-	var content = dict[textId];
+
+	//let impleTetContent be the wanted text
+	let simpleTetContent = dict[textId];
 	return (
 		<div className='text-box'>
 			<div className={'box ' + 'box-' + color}>
 				<span className='box-title'>{title}</span>
-				<p className='box-content'>{content}</p>
+				<p className='box-simpleTetContent'>{simpleTetContent}</p>
 			</div>
 		</div>
 	);

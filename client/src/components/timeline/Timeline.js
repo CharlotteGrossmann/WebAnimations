@@ -1,32 +1,35 @@
-import SimpleTextBox from '../simpleTextBox/SimpleTextBox';
-import AnimationBox from '../animationBox/AnimationBox';
-import '../../styles/Timeline.css';
-import TableTextBox from './../tableTextBox/TableTextBox';
+//time line (includes all boxes)
+//import react useRef functionality
 import React, { useRef } from 'react';
+
+//import css and backgroundassets
 import '../../styles/Background.css';
-//import Background from '../background/Background';
+import '../../styles/Timeline.css';
 import background from '../../assets/rainbow.svg';
 import backgroundMobile from '../../assets/rainbow_mobile.svg';
+
+//import all three box components
+import SimpleTextBox from '../simpleTextBox/SimpleTextBox';
+import AnimationBox from '../animationBox/AnimationBox';
+import TableTextBox from './../tableTextBox/TableTextBox';
+
 function Timeline() {
-	var cssIsActive = false;
+	//create reference for certain animations
 	var CSSAnimationLineRef = useRef();
-
-	var svgIsActive = false;
 	var SVGAnimationLineRef = useRef();
-
-	var canvasIsActive = false;
 	var canvasAnimationTimeLineRef = useRef();
-
-	var lottieIsActive = false;
 	var lottieAnimationLineRef = useRef();
 
+	//get windowWidth
 	let windowWidth = window.innerWidth;
 
+	//get new windowWidth after resizing
 	window.addEventListener('resize', () => {
 		windowWidth = window.innerWidth;
 	});
 	return (
 		<div className='time-line'>
+			{/* Background SVG is always as wide as viewport */}
 			<img
 				className='background-svg'
 				alt=''
@@ -39,176 +42,129 @@ function Timeline() {
 				src={backgroundMobile}
 				style={{ width: { windowWidth }, height: 'auto' }}
 			/>
+			{/* all components that are on the left side */}
 			<div className='time-line-left-column'>
+				{/* gif */}
 				<section className='time-line-text '>
-					<AnimationBox animationId='gif' float='left' color='blue' />
-				</section>
-				<section className='time-line-text'>
-					<SimpleTextBox
-						title='CSS'
-						textId='cssText'
-						float='left'
-						color='yellow'
-					/>
-					<TableTextBox float='left' color='yellow' tableId='css' />
+					<AnimationBox animationId='gif' color='blue' />
 				</section>
 
-				<section className='time-line-text '>
-					<AnimationBox animationId='js' float='right' color='red' />
-				</section>
+				{/* css */}
 				<section className='time-line-text'>
-					<SimpleTextBox
-						title='Flash'
-						textId='flashText'
-						float='right'
-						color='cyan'
-					/>
-					<TableTextBox float='right' color='cyan' tableId='flash' />
-					<SimpleTextBox
-						title='Fun Fact'
-						textId='flashFunFact'
-						float='right'
-						color='cyan'
-					/>
+					<SimpleTextBox title='CSS' textId='cssText' color='yellow' />
+					<TableTextBox color='yellow' tableId='css' />
 				</section>
+
+				{/* java script */}
+				<section className='time-line-text '>
+					<AnimationBox animationId='js' color='red' />
+				</section>
+
+				{/* flash */}
+				<section className='time-line-text'>
+					<SimpleTextBox title='Flash' textId='flashText' color='cyan' />
+					<TableTextBox color='cyan' tableId='flash' />
+					<SimpleTextBox title='Fun Fact' textId='flashFunFact' color='cyan' />
+				</section>
+
+				{/* svg */}
 				<section className='time-line-text'>
 					<span ref={SVGAnimationLineRef}>
-						<AnimationBox
-							animationId='svg'
-							float='left'
-							color='lime'
-							svgIsActive={svgIsActive}
-						/>
+						<AnimationBox animationId='svg' color='lime' />
 					</span>
 				</section>
+
+				{/* canvas */}
 				<section className='time-line-text'>
-					<SimpleTextBox
-						title='Canvas'
-						textId='canvasText'
-						float='left'
-						color='purple'
-					/>
-					<TableTextBox float='left' color='purple' tableId='canvas' />
+					<SimpleTextBox title='Canvas' textId='canvasText' color='purple' />
+					<TableTextBox color='purple' tableId='canvas' />
 				</section>
+
+				{/* video */}
 				<section className='time-line-text'>
-					<AnimationBox animationId='video' float='left' color='orange' />
+					<AnimationBox animationId='video' color='orange' />
 				</section>
+
+				{/* webgl */}
 				<section className='time-line-text'>
-					<SimpleTextBox
-						title='WebGL'
-						textId='webglText'
-						float='left'
-						color='navy'
-					/>
-					<TableTextBox float='left' color='navy' tableId='webGL' />
+					<SimpleTextBox title='WebGL' textId='webglText' color='navy' />
+					<TableTextBox color='navy' tableId='webGL' />
 				</section>
+
+				{/* lottie */}
 				<section className='time-line-text'>
 					<span ref={lottieAnimationLineRef}>
-						<AnimationBox
-							animationId='lottie'
-							float='left'
-							color='turquoise'
-							lottieIsActive={lottieIsActive}
-						/>
+						<AnimationBox animationId='lottie' color='turquoise' />
 					</span>
 				</section>
 			</div>
-			{/* ---------------------------------------------------------- */}
-			<div className='time-line-right-column'>
-				<section className='time-line-text'>
-					<SimpleTextBox
-						title='GIF'
-						textId='gifText'
-						float='right'
-						color='blue'
-					/>
 
-					<TableTextBox float='right' color='blue' tableId='gif' />
-					<SimpleTextBox
-						title='Fun Fact'
-						textId='gifFunFact'
-						float='right'
-						color='blue'
-					/>
+			{/* ---------------------------------------------------------- */}
+			{/* all components that are on the right side */}
+			<div className='time-line-right-column'>
+				{/* gif */}
+				<section className='time-line-text'>
+					<SimpleTextBox title='GIF' textId='gifText' color='blue' />
+
+					<TableTextBox color='blue' tableId='gif' />
+					<SimpleTextBox title='Fun Fact' textId='gifFunFact' color='blue' />
 				</section>
+
+				{/* css */}
 				<section className='time-line-text'>
 					<span ref={CSSAnimationLineRef}>
-						<AnimationBox
-							animationId='css'
-							float='right'
-							color='yellow'
-							cssIsActive={cssIsActive}
-						/>
+						<AnimationBox animationId='css' color='yellow' />
 					</span>
-				</section>
-				<section className='time-line-text'>
-					<SimpleTextBox
-						title='JavaScript'
-						textId='jsText'
-						float='left'
-						color='red'
-					/>
-					<TableTextBox float='left' color='red' tableId='javaScript' />
-					<SimpleTextBox
-						title='Fun Fact'
-						textId='jsFunFact'
-						float='left'
-						color='red'
-					/>
-				</section>
-				<section className='time-line-text'>
-					<AnimationBox animationId='flash' float='left' color='cyan' />
 				</section>
 
+				{/* java script */}
 				<section className='time-line-text'>
-					<SimpleTextBox
-						title='SVG'
-						textId='svgText'
-						float='right'
-						color='lime'
-					/>
-					<TableTextBox float='right' color='lime' tableId='svg' />
-					<SimpleTextBox
-						title='Fun Fact'
-						textId='svgFunFact'
-						float='right'
-						color='lime'
-					/>
+					<SimpleTextBox title='JavaScript' textId='jsText' color='red' />
+					<TableTextBox color='red' tableId='javaScript' />
+					<SimpleTextBox title='Fun Fact' textId='jsFunFact' color='red' />
 				</section>
+
+				{/* flash */}
+				<section className='time-line-text'>
+					<AnimationBox animationId='flash' color='cyan' />
+				</section>
+
+				{/* svg */}
+				<section className='time-line-text'>
+					<SimpleTextBox title='SVG' textId='svgText' color='lime' />
+					<TableTextBox color='lime' tableId='svg' />
+					<SimpleTextBox title='Fun Fact' textId='svgFunFact' color='lime' />
+				</section>
+
+				{/* canvas */}
 				<section className='time-line-text'>
 					<span ref={canvasAnimationTimeLineRef}>
-						<AnimationBox
-							animationId='canvas'
-							float='right'
-							color='purple'
-							canvasIsActive={canvasIsActive}
-						/>
+						<AnimationBox animationId='canvas' color='purple' />
 					</span>
 				</section>
+
+				{/* video */}
 				<section className='time-line-text'>
 					<SimpleTextBox
 						title='HTML5 Video'
 						textId='videoText'
-						float='right'
 						color='orange'
 					/>
-					<TableTextBox float='right' color='orange' tableId='video' />
+					<TableTextBox color='orange' tableId='video' />
 				</section>
+
+				{/* webgl */}
 				<section className='time-line-text'>
-					<AnimationBox animationId='webgl' float='right' color='navy' />
+					<AnimationBox animationId='webgl' color='navy' />
 				</section>
+
+				{/* lottie */}
 				<section className='time-line-text'>
-					<SimpleTextBox
-						title='Lottie'
-						textId='lottieText'
-						float='right'
-						color='turquoise'
-					/>
-					<TableTextBox float='right' color='turquoise' tableId='lottie' />
+					<SimpleTextBox title='Lottie' textId='lottieText' color='turquoise' />
+					<TableTextBox color='turquoise' tableId='lottie' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='lottieFunFact'
-						float='right'
 						color='turquoise'
 					/>
 				</section>

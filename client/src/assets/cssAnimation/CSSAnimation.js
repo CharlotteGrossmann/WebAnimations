@@ -1,14 +1,14 @@
+//css animation
+//import css and react functionality
 import './CSSAnimation.css';
-
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 function CSSAnimation(isActive) {
+	//create references
 	const CSSAnimationRef = useRef();
 	const CSSAnimationTitleRef = useRef();
 	const CSSAnimationLineRef = useRef();
-	/* window.addEventListener('scroll', () => {
-		console.log(isActive);
-	}); */
+
 	return (
 		<div className='CSSAnimation' ref={CSSAnimationRef}>
 			<span className='css-animation-title' ref={CSSAnimationTitleRef}>

@@ -1,13 +1,20 @@
+//js animation
+//import css and react functionality
 import './JSAnimation.css';
 import React, { useRef, useEffect } from 'react';
 
 function JSAnimation() {
 	var mouseX;
 	var mouseY;
+
+	//create references
 	var JSAnimationShipRef = useRef();
 	var JSAnimationInstructionRef = useRef();
 	var JSAnimationLineRef = useRef();
+
+	//if component renders
 	useEffect(() => {
+		// if mouse hovers over animation box, change css and add move-line to className
 		JSAnimationShipRef.current.parentElement.addEventListener(
 			'mouseover',
 			(event) => {
@@ -17,6 +24,7 @@ function JSAnimation() {
 			}
 		);
 
+		//if mouse leaves animation box set css and className to default values
 		JSAnimationShipRef.current.parentElement.addEventListener(
 			'mouseleave',
 			(event) => {
@@ -27,6 +35,7 @@ function JSAnimation() {
 			}
 		);
 
+		//if user clicks inside animation box calculate new position for JS Text to where the mouse is
 		JSAnimationShipRef.current.parentElement.addEventListener(
 			'click',
 			(event) => {

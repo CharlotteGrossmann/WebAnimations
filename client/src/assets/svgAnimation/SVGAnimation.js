@@ -1,7 +1,11 @@
+//svg animation
+//import css
 import './SVGAnimation.css';
+
 function SVGAnimation() {
 	return (
 		<div id='svgAnimation-box'>
+			{/* inline svg */}
 			<svg
 				id='svg-animation-svg'
 				xmlns='http://www.w3.org/2000/svg'
