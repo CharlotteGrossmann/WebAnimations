@@ -10,11 +10,10 @@
 	z-index: -100;
 	overflow: hidden;
 	left: 0;
-	top: 0;
+	top: 400px;
 	visibility: hidden;
 }
-
-@media only screen and (max-width: 479px) {
+@media only screen and (max-width: 800px) {
 	.background-svg {
 		visibility: hidden;
 	}

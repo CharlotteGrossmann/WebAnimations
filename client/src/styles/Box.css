@@ -14,8 +14,24 @@
 .box-title {
 	text-transform: uppercase;
 	font-size: larger;
+	font-family: Arvo;
 }
 
+.box-table,
+.box-content {
+	font-family: Ubuntu Mono;
+}
+.box-category {
+	margin-right: 30px;
+	display: inline-block;
+}
+
+.animation-box {
+	height: 300px;
+	overflow: hidden;
+}
+
+/* just colors */
 .box-red {
 	border-color: red;
 }
@@ -84,106 +100,4 @@
 }
 .box-grey .box-title {
 	color: grey;
-}
-
-.box-title {
-	font-family: Arvo;
-}
-
-.box-table,
-.box-content {
-	font-family: Ubuntu Mono;
-}
-.box-category {
-	margin-right: 30px;
-	display: inline-block;
-}
-
-.animation-box {
-	height: 300px;
-	width: 300px;
-	overflow: hidden;
-}
-
-/* GIF */
-.box-blue.animation-box {
-	margin-top: 10vw;
-}
-
-.text-box:nth-child(1) .box-blue {
-	margin-top: -10vw;
-}
-
-/* CSS */
-.box-yellow.animation-box {
-	margin-top: -40vw;
-}
-
-.text-box:nth-child(1) .box-yellow {
-	margin-top: -10vw;
-}
-
-/* JavaScript */
-.box-red.animation-box {
-	margin-top: -20vw;
-}
-
-.text-box:nth-child(1) .box-red {
-	margin-top: -30vw;
-}
-
-/* Flash */
-.box-cyan.animation-box {
-	margin-top: -30vw;
-}
-
-.text-box:nth-child(1) .box-cyan {
-	margin-top: -15vw;
-}
-
-/* SVG */
-.box-lime.animation-box {
-	margin-top: -40vw;
-}
-
-.text-box:nth-child(1) .box-lime {
-	margin-top: -15vw;
-}
-
-/* Canvas */
-.text-box:nth-child(1) .box-purple {
-	margin-top: -25vw;
-}
-
-.box-purple.animation-box {
-	margin-top: -35vw;
-}
-
-/* Video */
-
-.box-orange.animation-box {
-	margin-top: -20vw;
-}
-
-.text-box:nth-child(1) .box-orange {
-	margin-top: -25vw;
-}
-
-/* WebGL */
-.text-box:nth-child(1) .box-navy {
-	margin-top: -15vw;
-}
-
-.box-navy.animation-box {
-	margin-top: -15vw;
-}
-
-/* Lottie */
-
-.box-turquoise.animation-box {
-	margin-top: -15vw;
-}
-
-.text-box:nth-child(1) .box-turquoise {
-	margin-top: -20vw;
 }
