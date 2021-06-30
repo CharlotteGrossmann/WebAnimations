@@ -1,49 +1,5 @@
 import './SVGAnimation.css';
 function SVGAnimation() {
-	/* 	var debugSVGAnimation = true;
-	var myElement = document.getElementById('svgAnimation-box');
-	document.addEventListener('scroll', () => {
-		if (myElement) {
-			var bounding = myElement.getBoundingClientRect();
-
-			//console.log(bounding);
-
-			//if svg is in viewport -> start animation
-			if (
-				bounding.top >= 0 &&
-				bounding.left >= 0 &&
-				bounding.right <=
-					(window.innerWidth || document.documentElement.clientWidth) &&
-				bounding.bottom <=
-					(window.innerHeight || document.documentElement.clientHeight)
-			) {
-				document
-					.getElementById('svg-letter-s')
-					.classList.add('animate-letter-s');
-				document
-					.getElementById('svg-letter-v')
-					.classList.add('animate-letter-v');
-				document.getElementById('svg-ball').classList.add('ball');
-
-				if (debugSVGAnimation) {
-					console.log('Element is in the viewport!');
-				}
-			} else {
-				document
-					.getElementById('svg-letter-s')
-					.classList.remove('animate-letter-s');
-				document
-					.getElementById('svg-letter-v')
-					.classList.remove('animate-letter-v');
-				document.getElementById('svg-ball').classList.remove('ball');
-
-				if (debugSVGAnimation) {
-					console.log('Element is not in the viewport!');
-				}
-			}
-		}
-	});
- */
 	return (
 		<div id='svgAnimation-box'>
 			<svg

@@ -1,5 +1,5 @@
 import SimpleTextBox from '../simpleTextBox/SimpleTextBox';
-import Animation from '../animation/Animation';
+import AnimationBox from '../animationBox/AnimationBox';
 import '../../styles/Timeline.css';
 import TableTextBox from './../tableTextBox/TableTextBox';
 import React, { useRef } from 'react';
@@ -41,7 +41,7 @@ function Timeline() {
 			/>
 			<div className='time-line-left-column'>
 				<section className='time-line-text '>
-					<Animation animationId='gif' float='left' color='blue' />
+					<AnimationBox animationId='gif' float='left' color='blue' />
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -50,18 +50,11 @@ function Timeline() {
 						float='left'
 						color='yellow'
 					/>
-					<TableTextBox
-						float='left'
-						color='yellow'
-						year='1996'
-						dev='CERN'
-						pro='funktioniert gut auf mobilen Geräten und kann einfach responsive gestaltet werden, Vektor- und Pixelanimationen möglich, gute Performance'
-						con='komplexe, realistische Bewegungen mit bezier easings nicht möglich, kann nicht auf neue Inputs des Users reagieren '
-					/>
+					<TableTextBox float='left' color='yellow' tableId='css' />
 				</section>
 
 				<section className='time-line-text '>
-					<Animation animationId='js' float='right' color='red' />
+					<AnimationBox animationId='js' float='right' color='red' />
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -70,14 +63,7 @@ function Timeline() {
 						float='right'
 						color='cyan'
 					/>
-					<TableTextBox
-						float='right'
-						color='cyan'
-						year='1997'
-						dev='Macromedia'
-						pro='einfache Erstellung vektorbasierter Animationen, kleine Dateigrößen im SWF Format'
-						con='Browser Plugin zum Abspielen notwendig, funktionierten nicht wirklich auf mobilen Geräten'
-					/>
+					<TableTextBox float='right' color='cyan' tableId='flash' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='flashFunFact'
@@ -87,7 +73,7 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<span ref={SVGAnimationLineRef}>
-						<Animation
+						<AnimationBox
 							animationId='svg'
 							float='left'
 							color='lime'
@@ -102,17 +88,10 @@ function Timeline() {
 						float='left'
 						color='purple'
 					/>
-					<TableTextBox
-						float='left'
-						color='purple'
-						year='2004'
-						dev='Apple'
-						pro='gute Performance, komplexe Zeichnungen und Animationen in hochauflösenden Renderings, gute Einarbeitung von Interaktionen'
-						con='responsive komplexer, nicht unbedingt scharf auf Retina-Displays'
-					/>
+					<TableTextBox float='left' color='purple' tableId='canvas' />
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='video' float='left' color='orange' />
+					<AnimationBox animationId='video' float='left' color='orange' />
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -121,18 +100,11 @@ function Timeline() {
 						float='left'
 						color='navy'
 					/>
-					<TableTextBox
-						float='left'
-						color='navy'
-						year='2011'
-						dev='Khronos Group'
-						pro='unglaublich komplexe visuelle Effekte, 3 Dimensionen möglich, VR möglich'
-						con='schwieriger zu lernen als andere Animationen, schwierig responsive zu machen'
-					/>
+					<TableTextBox float='left' color='navy' tableId='webGL' />
 				</section>
 				<section className='time-line-text'>
 					<span ref={lottieAnimationLineRef}>
-						<Animation
+						<AnimationBox
 							animationId='lottie'
 							float='left'
 							color='turquoise'
@@ -151,14 +123,7 @@ function Timeline() {
 						color='blue'
 					/>
 
-					<TableTextBox
-						float='right'
-						color='blue'
-						year='1987'
-						dev='CompuServe'
-						pro='einfach und für jeden zugänglich, Videoinhalte möglich, in jedem Browser abspielbar'
-						con='womöglich große Dateigrößen, kein Alphakanal, kleine Kompression, nicht skalierbar'
-					/>
+					<TableTextBox float='right' color='blue' tableId='gif' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='gifFunFact'
@@ -168,7 +133,7 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<span ref={CSSAnimationLineRef}>
-						<Animation
+						<AnimationBox
 							animationId='css'
 							float='right'
 							color='yellow'
@@ -183,14 +148,7 @@ function Timeline() {
 						float='left'
 						color='red'
 					/>
-					<TableTextBox
-						float='left'
-						color='red'
-						year='1996'
-						dev='Netscape'
-						pro='mehr Flexibilität und Komplexität als CSS Animationen, Einbindung von Libraries für mehr Optionen, einfache Animation von SVGs, dynamisch (kann auf Inputs des Users reagieren)'
-						con='erhält SVG-Dateien nicht, wenn sie als Bild eingebettet sind'
-					/>
+					<TableTextBox float='left' color='red' tableId='javaScript' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='jsFunFact'
@@ -199,7 +157,7 @@ function Timeline() {
 					/>
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='flash' float='left' color='cyan' />
+					<AnimationBox animationId='flash' float='left' color='cyan' />
 				</section>
 
 				<section className='time-line-text'>
@@ -209,14 +167,7 @@ function Timeline() {
 						float='right'
 						color='lime'
 					/>
-					<TableTextBox
-						float='right'
-						color='lime'
-						year='2001'
-						dev='World Wide Web Consortium'
-						pro='Skalierbarkeit ohne Qualitätsverlust, da vektorbasiert'
-						con='mit CSS nicht alle Eigenschaften animierbar, SVG eigener Syntax SMIL verliert an Support'
-					/>
+					<TableTextBox float='right' color='lime' tableId='svg' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='svgFunFact'
@@ -226,7 +177,7 @@ function Timeline() {
 				</section>
 				<section className='time-line-text'>
 					<span ref={canvasAnimationTimeLineRef}>
-						<Animation
+						<AnimationBox
 							animationId='canvas'
 							float='right'
 							color='purple'
@@ -241,17 +192,10 @@ function Timeline() {
 						float='right'
 						color='orange'
 					/>
-					<TableTextBox
-						float='right'
-						color='orange'
-						year='2007'
-						dev='Opera'
-						pro='einfach und für jeden zugänglich, Videoinhalte möglich, in jedem Browser abspielbar'
-						con='womöglich große Dateigrößen, kein Alphakanal, kleine Kompression, pixelbasiert (daher nicht skalierbar)'
-					/>
+					<TableTextBox float='right' color='orange' tableId='video' />
 				</section>
 				<section className='time-line-text'>
-					<Animation animationId='webgl' float='right' color='navy' />
+					<AnimationBox animationId='webgl' float='right' color='navy' />
 				</section>
 				<section className='time-line-text'>
 					<SimpleTextBox
@@ -260,14 +204,7 @@ function Timeline() {
 						float='right'
 						color='turquoise'
 					/>
-					<TableTextBox
-						float='right'
-						color='turquoise'
-						year='2017'
-						dev='Airbnb'
-						pro='einfache Umsetzung (auch für Designer), kleine Dateigrößen, einfache Einbindung'
-						con='funktioniert nur mit AfterEffects, Übergänge zwischen Screens nicht möglich'
-					/>
+					<TableTextBox float='right' color='turquoise' tableId='lottie' />
 					<SimpleTextBox
 						title='Fun Fact'
 						textId='lottieFunFact'
