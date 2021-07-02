@@ -51,7 +51,7 @@ function TextBox({ title, textId, color }) {
 		<div className='text-box'>
 			<div className={'box ' + 'box-' + color}>
 				<span className='box-title'>{title}</span>
-				<p className='box-simpleTetContent'>{simpleTetContent}</p>
+				<p className='box-simpleTextContent'>{simpleTetContent}</p>
 			</div>
 		</div>
 	);

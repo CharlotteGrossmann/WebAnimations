@@ -1,7 +1,12 @@
 .time-line-grid {
+	background-size: auto 100%;
+	background-repeat: no-repeat;
+	background-image: url('../assets/rainbow_short.svg');
+	background-position: center;
+
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: auto auto auto auto auto auto;
 	grid-template-areas:
 		'section1 section2'
 		'section3 section4'
@@ -34,13 +39,19 @@
 .section18 {
 	margin-left: auto;
 	margin-right: auto;
+	margin-bottom: auto;
 	height: auto;
 }
 
 @media only screen and (max-width: 800px) {
 	.time-line-grid {
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-image: url('../assets/rainbow_short.svg');
+		background-position: center;
+
 		grid-template-columns: 1fr;
-		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto auto;
 		grid-template-areas:
 			'section1'
 			'section2'

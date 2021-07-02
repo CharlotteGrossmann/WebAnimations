@@ -1,7 +1,4 @@
 //time line (includes all boxes)
-//import react useRef functionality
-import React, { useRef } from 'react';
-import Background from '../background/Background';
 
 //import css
 import '../../styles/Timeline.css';
@@ -12,15 +9,8 @@ import AnimationBox from '../animationBox/AnimationBox';
 import TableTextBox from './../tableTextBox/TableTextBox';
 
 function Timeline() {
-	//create reference for certain animations
-	var CSSAnimationLineRef = useRef();
-	var SVGAnimationLineRef = useRef();
-	var canvasAnimationTimeLineRef = useRef();
-	var lottieAnimationLineRef = useRef();
-
 	return (
 		<div className='time-line'>
-			<Background />
 			{/* all components that are on the left side */}
 			<div className='time-line-grid'>
 				{/* gif */}
@@ -48,9 +38,7 @@ function Timeline() {
 
 				{/* svg */}
 				<section className='time-line-text section9'>
-					<span ref={SVGAnimationLineRef}>
-						<AnimationBox animationId='svg' color='lime' />
-					</span>
+					<AnimationBox animationId='svg' color='lime' />
 				</section>
 
 				{/* canvas */}
@@ -71,16 +59,13 @@ function Timeline() {
 				</section>
 
 				{/* lottie */}
-				<section className='time-line-text section16'>
-					<span ref={lottieAnimationLineRef}>
-						<AnimationBox animationId='lottie' color='turquoise' />
-					</span>
+				<section className='time-line-text section17'>
+					<AnimationBox animationId='lottie' color='turquoise' />
 				</section>
 				{/* </div> */}
 
 				{/* ---------------------------------------------------------- */}
 				{/* all components that are on the right side */}
-				{/* <div className='time-line-right-column'> */}
 				{/* gif */}
 				<section className='time-line-text  section2'>
 					<SimpleTextBox title='GIF' textId='gifText' color='blue' />
@@ -91,9 +76,7 @@ function Timeline() {
 
 				{/* css */}
 				<section className='time-line-text section4'>
-					<span ref={CSSAnimationLineRef}>
-						<AnimationBox animationId='css' color='yellow' />
-					</span>
+					<AnimationBox animationId='css' color='yellow' />
 				</section>
 
 				{/* java script */}
@@ -117,9 +100,7 @@ function Timeline() {
 
 				{/* canvas */}
 				<section className='time-line-text section12'>
-					<span ref={canvasAnimationTimeLineRef}>
-						<AnimationBox animationId='canvas' color='purple' />
-					</span>
+					<AnimationBox animationId='canvas' color='purple' />
 				</section>
 
 				{/* video */}

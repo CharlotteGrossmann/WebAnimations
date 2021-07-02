@@ -1,4 +1,5 @@
 body {
-	background-color: black;
+	background-image: url('./assets/background-color.svg');
+	background-size: cover;
 	color: white;
 }
